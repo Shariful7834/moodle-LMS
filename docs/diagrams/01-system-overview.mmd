@@ -1,0 +1,30 @@
+flowchart LR
+    subgraph Browser
+        Student[Student Browser]
+        Professor[Professor Browser]
+    end
+
+    subgraph "Academic Wallet (Node.js, port 4000)"
+        WAPI[Express REST API]
+        WUI[React Frontend, port 5173]
+        WDB[(data/db.json)]
+    end
+
+    subgraph "Moodle (PHP, port 8080)"
+        MCore[Moodle Core]
+        MPlugin[local_academic_wallet plugin]
+        MWS[Web Services API]
+    end
+
+    subgraph "DEE-Core (Laravel, future)"
+        DCore[DEE-Core API]
+    end
+
+    Student -->|JWT| WUI
+    Professor -->|Moodle session| MCore
+    WUI -->|JWT| WAPI
+    MPlugin -->|X-API-Key / Bearer| WAPI
+    WAPI -->|wstoken| MWS
+    MPlugin --- MCore
+    DCore -.->|X-API-Key / Bearer| WAPI
+    WAPI --- WDB

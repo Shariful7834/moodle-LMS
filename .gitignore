@@ -1,0 +1,34 @@
+# Claude Code workspace
+.claude/
+
+# Scratch / draft docs (keep only EXTERNAL_SERVICE_INTEGRATION.md)
+INTEGRATION.md
+RECORDING_SCRIPT.md
+SHORT_INTEGRATION_VIDEO_SCRIPT.md
+copy.md
+copy2.md
+new.md
+dee-core.md
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build output
+client/dist/
+client/build/
+
+# Env files
+.env
+.env.local
+.env.*.local
+*.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

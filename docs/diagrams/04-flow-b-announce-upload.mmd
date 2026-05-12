@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant P as Professor (Moodle)
+    participant Pl as Wallet Plugin
+    participant W as Wallet
+    participant S as Student
+    participant A as Admin
+    P->>Pl: Submit announce form
+    Pl->>W: POST /api/announce-certificate (X-API-Key)
+    W->>W: db.announcements.create(expiresAt:+30d)
+    W-->>Pl: 201 announcementId
+    S->>W: GET /api/credentials/announcements (JWT)
+    S->>W: POST /api/credentials/upload (multipart)
+    A->>W: POST /api/credentials/verify-upload/:id
+    W->>W: build OB 3.0 with evidence
+    W->>W: db.credentials.create(status:issued)

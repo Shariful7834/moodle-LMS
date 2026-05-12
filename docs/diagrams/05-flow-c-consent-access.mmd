@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant P as Professor (Moodle)
+    participant Pl as Wallet Plugin
+    participant W as Wallet
+    participant S as Student
+    P->>Pl: Click "Request Access"
+    Pl->>W: POST /wallet/access/request (X-API-Key)
+    W-->>Pl: 201 {requestId, status:pending}
+    S->>W: GET /wallet/notifications (JWT)
+    W-->>S: pending requests
+    S->>W: POST /wallet/access/grant (JWT)
+    W->>W: crypto.randomBytes(32) → token, expiry +7d
+    W-->>S: {accessToken, tokenExpiresAt}
+    Pl->>W: GET /wallet/access/status/:id (X-API-Key)
+    W-->>Pl: {status:approved, accessToken}
+    Pl->>W: GET /ims/ob/v3p0/credentials (Bearer)
+    W-->>Pl: OB 3.0 credentials JSON

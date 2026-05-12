@@ -1,0 +1,5 @@
+flowchart TB
+    A[External Service] -->|X-API-Key header<br/>system identity| W[Wallet]
+    A -->|Authorization: Bearer<br/>per-student access token| W
+    U[Student in Wallet UI] -->|JWT in localStorage| W
+    W -->|wstoken query param| M[Moodle Web Services]

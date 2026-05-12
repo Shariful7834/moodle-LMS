@@ -1,0 +1,15 @@
+# Place screenshots here
+#
+# Suggested filenames (referenced by INTEGRATION.md):
+#   01-architecture.png         — overall system diagram
+#   02-wallet-login.png         — wallet login screen
+#   03-wallet-dashboard.png     — student dashboard
+#   04-moodle-plugin-settings.png — plugin config page
+#   05-moodle-search.png        — search students
+#   06-moodle-announce.png      — announce certificate form
+#   07-wallet-announcement.png  — student sees announcement
+#   08-wallet-upload.png        — student uploads cert
+#   09-admin-verify.png         — admin verifies upload
+#   10-moodle-request.png       — request access form
+#   11-wallet-notification.png  — student approves request
+#   12-moodle-read-creds.png    — read OB 3.0 with token

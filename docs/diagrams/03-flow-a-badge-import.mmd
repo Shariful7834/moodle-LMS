@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant S as Student
+    participant W as Wallet
+    participant M as Moodle WS
+    S->>W: GET /api/credentials/moodle-badges (JWT)
+    W->>M: core_user_get_users_by_field (wstoken)
+    M-->>W: {moodleUserId}
+    W->>M: core_badges_get_user_badges (wstoken)
+    M-->>W: [badges]
+    W-->>S: badge list (alreadyImported flags)
+    S->>W: POST /api/credentials/import-moodle-badge
+    W->>W: badgeToOB3() conversion
+    W->>W: db.credentials.create(ob3)
+    W-->>S: 201 OB 3.0 credential stored
