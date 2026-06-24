@@ -331,6 +331,36 @@
       "action": "login",
       "detail": "student@university.edu logged in",
       "createdAt": "2026-06-24T00:23:12.985Z"
+    },
+    {
+      "userId": 2,
+      "action": "login",
+      "detail": "student@university.edu logged in",
+      "createdAt": "2026-06-24T01:44:55.728Z"
+    },
+    {
+      "userId": 1,
+      "action": "login",
+      "detail": "admin@wallet.local logged in",
+      "createdAt": "2026-06-24T01:46:14.036Z"
+    },
+    {
+      "userId": 2,
+      "action": "login",
+      "detail": "student@university.edu logged in",
+      "createdAt": "2026-06-24T01:47:13.865Z"
+    },
+    {
+      "userId": 2,
+      "action": "login",
+      "detail": "student@university.edu logged in",
+      "createdAt": "2026-06-24T01:50:41.566Z"
+    },
+    {
+      "userId": 1,
+      "action": "login",
+      "detail": "admin@wallet.local logged in",
+      "createdAt": "2026-06-24T02:33:25.888Z"
     }
   ],
   "_meta": {
