@@ -6,10 +6,11 @@ const { signToken, authMiddleware } = require('../auth');
 
 const router = express.Router();
 
-// 10 attempts / 15 min / IP — protects login + register from brute force
+// Protect login + register from brute force. Default 10 attempts / 15 min (strict).
+// Raise via AUTH_RATE_LIMIT_MAX in .env during heavy local testing so you don't lock out.
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
-  max: 10,
+  max: parseInt(process.env.AUTH_RATE_LIMIT_MAX || '10', 10),
   standardHeaders: true,
   legacyHeaders: false,
   message: { error: 'Too many authentication attempts. Try again later.' }

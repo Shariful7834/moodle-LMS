@@ -188,6 +188,37 @@ export default function CredentialDetail() {
         </div>
       </div>
 
+      {/* Recognition metadata — type, framework alignment, tags (LMS Pre-check) */}
+      {ob3?.credentialSubject?.achievement && (() => {
+        const ach = ob3.credentialSubject.achievement;
+        const aligns = Array.isArray(ach.alignment) ? ach.alignment : [];
+        const tags = Array.isArray(ach.tag) ? ach.tag : [];
+        if (!ach.achievementType && aligns.length === 0 && tags.length === 0) return null;
+        return (
+          <div className="bg-white rounded-xl border border-gray-200 p-5 mb-4">
+            <h2 className="text-sm font-semibold text-gray-700 mb-3">Recognition details</h2>
+            <div className="flex flex-wrap items-center gap-2">
+              {ach.achievementType && (
+                <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 text-indigo-700">
+                  Type: {ach.achievementType}
+                </span>
+              )}
+              {aligns.map((a, i) => (
+                <span key={`al-${i}`} className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 text-emerald-700" title={a.targetUrl}>
+                  Aligned: {a.targetCode || a.targetName}{a.targetFramework ? ` (${a.targetFramework})` : ''}
+                </span>
+              ))}
+              {tags.map((t, i) => (
+                <span key={`tg-${i}`} className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-gray-100 text-gray-600">
+                  #{t}
+                </span>
+              ))}
+            </div>
+            <p className="text-xs text-gray-400 mt-2">The LMS uses the alignment code (and tags) to match this badge to a requirement automatically.</p>
+          </div>
+        );
+      })()}
+
       {/* JWT-VC Section — present whenever a signed JWT exists */}
       {jwt && (
         <div className="bg-white rounded-xl border border-gray-200 p-6 mb-4">

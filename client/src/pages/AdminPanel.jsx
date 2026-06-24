@@ -83,6 +83,8 @@ export default function AdminPanel() {
       achievementDescription: ann?.achievementDescription || u.description || '',
       issuerName: ann?.source || '',
       criteria: ann?.criteria || '',
+      achievementType: ann?.achievementType || 'Certificate',
+      validUntil: '',
       imageUrl: '',
       tags: '',
       frameworkName: '',
@@ -104,6 +106,8 @@ export default function AdminPanel() {
         achievementDescription: verifyForm.achievementDescription,
         issuerName: verifyForm.issuerName,
         criteria: verifyForm.criteria,
+        achievementType: verifyForm.achievementType,
+        validUntil: verifyForm.validUntil,
         imageUrl: verifyForm.imageUrl,
         tags: verifyForm.tags,
         frameworkName: verifyForm.frameworkName,
@@ -335,7 +339,23 @@ export default function AdminPanel() {
                                     onChange={e => setVerifyForm(p => ({ ...p, achievementDescription: e.target.value }))}
                                     rows="2" className="w-full px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
                                 </div>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-3">
+                                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+                                  <div>
+                                    <label className="block text-xs text-green-700 mb-1">Achievement type</label>
+                                    <select value={verifyForm.achievementType}
+                                      onChange={e => setVerifyForm(p => ({ ...p, achievementType: e.target.value }))}
+                                      className="w-full px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none">
+                                      {['Certificate', 'Course', 'Competency', 'CertificateOfCompletion', 'Diploma', 'License', 'MicroCredential', 'Badge', 'Achievement'].map(t => (
+                                        <option key={t} value={t}>{t}</option>
+                                      ))}
+                                    </select>
+                                  </div>
+                                  <div>
+                                    <label className="block text-xs text-green-700 mb-1">Expires (optional)</label>
+                                    <input type="date" value={verifyForm.validUntil}
+                                      onChange={e => setVerifyForm(p => ({ ...p, validUntil: e.target.value }))}
+                                      className="w-full px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
+                                  </div>
                                   <div>
                                     <label className="block text-xs text-green-700 mb-1">Criteria</label>
                                     <input value={verifyForm.criteria}
@@ -343,13 +363,13 @@ export default function AdminPanel() {
                                       placeholder="e.g. Pass all modules with 70%+"
                                       className="w-full px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
                                   </div>
-                                  <div>
-                                    <label className="block text-xs text-green-700 mb-1">Admin Notes</label>
-                                    <input value={verifyForm.notes}
-                                      onChange={e => setVerifyForm(p => ({ ...p, notes: e.target.value }))}
-                                      placeholder="Internal notes"
-                                      className="w-full px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
-                                  </div>
+                                </div>
+                                <div className="mb-3">
+                                  <label className="block text-xs text-green-700 mb-1">Admin Notes</label>
+                                  <input value={verifyForm.notes}
+                                    onChange={e => setVerifyForm(p => ({ ...p, notes: e.target.value }))}
+                                    placeholder="Internal notes"
+                                    className="w-full px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
                                 </div>
                                 <div className="mb-3">
                                   <label className="block text-xs text-green-700 mb-1">Badge logo (institution / block-week — issuer branding, optional)</label>

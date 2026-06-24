@@ -389,7 +389,19 @@ router.post('/approve-claim/:id', requireRole('admin'), async (req, res) => {
       statusListId: listId,
       statusListIndex: listIndex,
       statusListType: 'BitstringStatusListEntry',
-      identitySalt
+      identitySalt,
+      // Carry the announcement's course code as a framework alignment + course tag so the
+      // LMS can match claim-based credentials too (Pre-check).
+      alignment: announcement?.courseId
+        ? [{
+            targetName: announcement.achievementName || announcement.courseId,
+            targetFramework: announcement.sourceName || announcement.source || 'LMS',
+            targetCode: String(announcement.courseId),
+            targetType: 'CFItem',
+            targetUrl: `${keys.getState().issuerBaseUrl}/framework/${encodeURIComponent(String(announcement.courseId))}`
+          }]
+        : [],
+      tag: announcement?.courseId ? [String(announcement.courseId)] : []
     });
 
     const { jwt, header, payload } = await jwtVc.signCredential(vc, { studentEmail });
@@ -453,8 +465,16 @@ router.post('/verify-upload/:id', requireRole('admin'), async (req, res) => {
       tags,
       frameworkName,
       frameworkCode,
+      validUntil,
       notes
     } = req.body;
+
+    // Optional expiry (issuer-set). Accept a date string; default to no expiry when blank.
+    let validUntilIso;
+    if (validUntil && String(validUntil).trim()) {
+      const d = new Date(String(validUntil).trim());
+      if (!isNaN(d.getTime())) validUntilIso = d.toISOString();
+    }
 
     // Tags: comma-separated string -> array. Alignment: a single framework code/name the
     // LMS matches on for Pre-check (optional, issuer-set).
@@ -526,7 +546,7 @@ router.post('/verify-upload/:id', requireRole('admin'), async (req, res) => {
       issuerUrl: baseUrl,
       issuerEmail: 'registrar@university.edu',
       validFromIso: issuedDate,
-      validUntilIso: new Date(Date.now() + 5 * 365 * 24 * 60 * 60 * 1000).toISOString(),
+      validUntilIso, // undefined = no expiry (academic default)
       statusListId: listId,
       statusListIndex: listIndex,
       statusListType: 'BitstringStatusListEntry',

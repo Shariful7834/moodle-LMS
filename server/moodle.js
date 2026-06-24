@@ -74,7 +74,9 @@ function badgeToOB3(badge, student, credentialId, { statusListId, statusListInde
     statusListId,
     statusListIndex,
     statusListType: 'BitstringStatusListEntry',
-    identitySalt
+    identitySalt,
+    // Tag with source + badge id so the LMS can recognise imported Moodle badges.
+    tag: ['moodle', `badge-${badge.id}`]
   });
 }
 

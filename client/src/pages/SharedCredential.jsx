@@ -162,6 +162,27 @@ export default function SharedCredential() {
                 </span>
               </div>
             </div>
+
+            {/* Recognition chips (type / alignment / tags) */}
+            {(() => {
+              const ach = ob3?.credentialSubject?.achievement || {};
+              const aligns = Array.isArray(ach.alignment) ? ach.alignment : [];
+              const tags = Array.isArray(ach.tag) ? ach.tag : [];
+              if (!ach.achievementType && aligns.length === 0 && tags.length === 0) return null;
+              return (
+                <div className="flex flex-wrap items-center gap-2 pt-2">
+                  {ach.achievementType && (
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-indigo-50 text-indigo-700">Type: {ach.achievementType}</span>
+                  )}
+                  {aligns.map((a, i) => (
+                    <span key={`al-${i}`} className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-emerald-50 text-emerald-700">Aligned: {a.targetCode || a.targetName}{a.targetFramework ? ` (${a.targetFramework})` : ''}</span>
+                  ))}
+                  {tags.map((t, i) => (
+                    <span key={`tg-${i}`} className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-medium bg-gray-100 text-gray-600">#{t}</span>
+                  ))}
+                </div>
+              );
+            })()}
           </div>
         </div>
 
