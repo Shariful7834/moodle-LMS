@@ -387,3 +387,6 @@ The external integration works like this:
 
 Moodle already implements this through the `local_academic_wallet` plugin.
 DEE-Core can use the same endpoints through a Laravel service client.
+
+
+Thank you. 
