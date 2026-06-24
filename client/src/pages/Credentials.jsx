@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { getCredentials } from '../services/api';
-import { Award, Share2, ExternalLink, CheckCircle, Clock, Shield } from 'lucide-react';
+import { Award, Share2, CheckCircle, Clock, Shield, GraduationCap, Bell, Upload } from 'lucide-react';
+import PageHeader from '../components/ui/PageHeader';
+import EmptyState from '../components/ui/EmptyState';
 
 export default function Credentials() {
   const { user } = useAuth();
@@ -20,27 +22,36 @@ export default function Credentials() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">
-          {user.role === 'admin' ? 'All Credentials' : 'My Credentials'}
-        </h1>
-        <p className="text-gray-500 text-sm mt-1">
-          {user.role === 'admin'
-            ? 'All issued credentials in the wallet'
-            : 'Your verified Open Badges 3.0 credentials. Share approved ones with Moodle or other services.'}
-        </p>
-      </div>
+      <PageHeader
+        icon={Award}
+        title={user.role === 'admin' ? 'All Credentials' : 'My Credentials'}
+        subtitle={user.role === 'admin'
+          ? 'All issued credentials in the wallet'
+          : 'Your verified Open Badges 3.0 credentials. Tap any credential to share it or verify it externally.'}
+        action={user.role === 'student'
+          ? { label: 'Import from Moodle', to: '/moodle-badges', icon: GraduationCap }
+          : null}
+      />
 
       {credentials.length === 0 ? (
-        <div className="text-center py-16 bg-white rounded-xl border border-gray-200">
-          <Award className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500 font-medium">No credentials yet</p>
-          <p className="text-gray-400 text-sm mt-1">
-            {user.role === 'student'
-              ? 'Submit a certificate from announcements or upload one for verification'
-              : 'No credentials have been issued yet'}
-          </p>
-        </div>
+        user.role === 'student' ? (
+          <EmptyState
+            icon={Award}
+            title="No credentials yet"
+            description="Get your first credential in one of three ways, then you can share and verify it."
+            actions={[
+              { label: 'Import from Moodle', to: '/moodle-badges', icon: GraduationCap },
+              { label: 'View Announcements', to: '/announcements', icon: Bell },
+              { label: 'Upload Certificate', to: '/upload', icon: Upload },
+            ]}
+          />
+        ) : (
+          <EmptyState
+            icon={Award}
+            title="No credentials yet"
+            description="No credentials have been issued in the wallet yet."
+          />
+        )
       ) : (
         <div className="space-y-4">
           {credentials.map(cred => (

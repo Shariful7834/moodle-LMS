@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { getAnnouncements } from '../services/api';
 import { Bell, Award, Building, Clock, CheckCircle, XCircle, Upload, AlertCircle, ExternalLink } from 'lucide-react';
+import PageHeader from '../components/ui/PageHeader';
+import EmptyState from '../components/ui/EmptyState';
 
 export default function Announcements() {
   const [announcements, setAnnouncements] = useState([]);
@@ -16,7 +18,13 @@ export default function Announcements() {
       .finally(() => setLoading(false));
   };
 
-  useEffect(() => { fetchData(); }, []);
+  useEffect(() => {
+    fetchData();
+    // Refetch when returning to this page/tab so submit status is never stale.
+    const onFocus = () => fetchData();
+    window.addEventListener('focus', onFocus);
+    return () => window.removeEventListener('focus', onFocus);
+  }, []);
 
   const handleSubmitCertificate = (ann) => {
     // Navigate to upload page pre-filled with announcement details
@@ -33,12 +41,11 @@ export default function Announcements() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Certificate Announcements</h1>
-        <p className="text-gray-500 text-sm mt-1">
-          Certificates requested by Moodle and other learning platforms. If you already have this certificate, upload it for admin verification.
-        </p>
-      </div>
+      <PageHeader
+        icon={Bell}
+        title="Certificate Announcements"
+        subtitle="Certificates requested by Moodle and other learning platforms. If you already have one, upload it for admin verification."
+      />
 
       {/* How it works */}
       <div className="bg-blue-50 rounded-xl border border-blue-200 p-4 mb-6">
@@ -57,11 +64,15 @@ export default function Announcements() {
       </div>
 
       {announcements.length === 0 ? (
-        <div className="text-center py-16 bg-white rounded-xl border border-gray-200">
-          <Bell className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500 font-medium">No announcements yet</p>
-          <p className="text-gray-400 text-sm mt-1">When Moodle requests a certificate, it will appear here</p>
-        </div>
+        <EmptyState
+          icon={Bell}
+          title="No announcements yet"
+          description="When Moodle requests a certificate, it will appear here. Meanwhile, you can import badges from Moodle or upload a certificate."
+          actions={[
+            { label: 'Import from Moodle', to: '/moodle-badges', icon: Award },
+            { label: 'Upload Certificate', to: '/upload', icon: Upload },
+          ]}
+        />
       ) : (
         <div className="space-y-4">
           {announcements.map(ann => {

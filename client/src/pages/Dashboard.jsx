@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { getCredentials, getAnnouncements, getMyUploads, getAdminStats } from '../services/api';
-import { Award, Bell, Upload, Users, ArrowRight, CheckCircle, Clock, Search, GraduationCap } from 'lucide-react';
+import { Award, Bell, Upload, Users, ArrowRight, CheckCircle, Clock, Search, GraduationCap, Share2 } from 'lucide-react';
+import GuidanceBanner from '../components/ui/GuidanceBanner';
 
 function StatCard({ icon: Icon, label, value, color, to }) {
   const card = (
@@ -73,6 +74,34 @@ export default function Dashboard() {
           <StatCard icon={Award} label="Issued Credentials" value={stats.credentials?.issued || 0} color="bg-green-500" to="/admin" />
           <StatCard icon={Bell} label="Active Announcements" value={stats.announcements?.active || 0} color="bg-amber-500" to="/admin" />
           <StatCard icon={Users} label="Total Users" value={stats.users?.total || 0} color="bg-blue-500" to="/admin" />
+        </div>
+      )}
+
+      {/* Student: single clearest next step */}
+      {user.role === 'student' && stats && (
+        <div className="mb-8">
+          {stats.credentials === 0 ? (
+            <GuidanceBanner
+              icon={GraduationCap}
+              title="Start here: get your first credential"
+              description="Import a badge from Moodle, or upload a certificate for verification."
+              action={{ label: 'Import from Moodle', to: '/moodle-badges' }}
+            />
+          ) : stats.pendingUploads > 0 ? (
+            <GuidanceBanner
+              icon={Clock}
+              title={`${stats.pendingUploads} certificate${stats.pendingUploads > 1 ? 's' : ''} awaiting verification`}
+              description="An admin reviews uploads. Approved ones become verifiable credentials."
+              action={{ label: 'View Uploads', to: '/upload' }}
+            />
+          ) : (
+            <GuidanceBanner
+              icon={Share2}
+              title="Your credentials are ready to share"
+              description="Open a credential to share it, export the signed JWT, or verify it externally."
+              action={{ label: 'View My Credentials', to: '/credentials' }}
+            />
+          )}
         </div>
       )}
 

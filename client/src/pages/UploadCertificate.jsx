@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { uploadCertificate, getMyUploads, getUploadFileUrl, updateUpload, deleteUpload } from '../services/api';
 import { Upload, FileText, Clock, CheckCircle, XCircle, AlertCircle, Image, FileJson, File, Award, Trash2, Pencil, ExternalLink } from 'lucide-react';
+import PageHeader from '../components/ui/PageHeader';
 import toast from 'react-hot-toast';
 
 const ALLOWED_TYPES = ['application/pdf', 'image/jpeg', 'image/png', 'application/json'];
@@ -163,13 +164,11 @@ export default function UploadCertificate() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Upload Certificate</h1>
-        <p className="text-gray-500 text-sm mt-1">
-          Upload a certificate file (PDF, JPG, PNG, or JSON) for admin verification.
-          Once verified, admin will create an OB 3.0 credential you can share.
-        </p>
-      </div>
+      <PageHeader
+        icon={Upload}
+        title="Upload Certificate"
+        subtitle="Upload a certificate file (PDF, JPG, PNG, or JSON) for admin verification. Once verified, you get an OB 3.0 credential you can share."
+      />
 
       {/* Upload Form */}
       <form onSubmit={handleSubmit} className="bg-white rounded-xl border border-gray-200 p-6 mb-6">

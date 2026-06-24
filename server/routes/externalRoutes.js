@@ -2,8 +2,25 @@ const express = require('express');
 const { v4: uuidv4 } = require('uuid');
 const db = require('../db');
 const { apiKeyMiddleware, API_KEYS } = require('../auth');
+const jwtVc = require('../jwtVc');
+const statusList = require('../statusList');
+const keys = require('../keys');
+const { safeFetch } = require('../safeFetch');
 
 const router = express.Router();
+
+// Resolve URLs that belong to our own issuer base over loopback, so the server can
+// always verify credentials it issued — even if the public issuer URL (CDN / tunnel /
+// stable domain) is temporarily unreachable. Third-party URLs are fetched unchanged.
+function localizeOwnIssuerUrl(url) {
+  try {
+    const ownBase = (keys.getState().issuerBaseUrl || '').replace(/\/$/, '');
+    if (ownBase && typeof url === 'string' && url.startsWith(ownBase)) {
+      return url.replace(ownBase, `http://127.0.0.1:${process.env.PORT || 4000}`);
+    }
+  } catch { /* keys not init — fall through */ }
+  return url;
+}
 
 // ── POST /api/announce-certificate ─────────────────────────
 // Moodle announces a course certificate is available → ALL students see it
@@ -85,23 +102,29 @@ router.post('/share-credential', apiKeyMiddleware, (req, res) => {
 });
 
 // ── GET /api/public-credentials/:id ─────────────────────────
-// Returns OB 3.0 JSON-LD credential (API key OR share token)
+// Share-token access → render-ready shape for the public /shared page.
+// API-key access → raw OB 3.0 JSON-LD for machine consumers.
 router.get('/public-credentials/:id', (req, res) => {
   const apiKey = req.headers['x-api-key'];
   const shareToken = req.query.token;
 
   let credential;
+  let viaShare = false;
 
   if (shareToken) {
     const share = db.shares.findByToken(shareToken);
-    if (!share || (share.expiresAt && new Date(share.expiresAt) < new Date())) {
+    if (!share || share.credentialId !== req.params.id) {
       return res.status(404).json({ error: 'Invalid or expired share link' });
+    }
+    if (share.expiresAt && new Date(share.expiresAt) < new Date()) {
+      return res.status(410).json({ error: 'This share link has expired' });
     }
     credential = db.credentials.findById(share.credentialId);
     if (!credential || !credential.shareApproved) {
       return res.status(403).json({ error: 'Credential not approved for sharing' });
     }
     db.shares.incrementView(shareToken);
+    viaShare = true;
   } else if (apiKey && API_KEYS[apiKey]) {
     credential = db.credentials.findById(req.params.id);
   } else {
@@ -111,81 +134,222 @@ router.get('/public-credentials/:id', (req, res) => {
   if (!credential) return res.status(404).json({ error: 'Credential not found' });
   if (credential.status !== 'issued') return res.status(403).json({ error: `Credential status: ${credential.status}` });
 
-  res.json(JSON.parse(credential.ob3Json));
+  const ob3 = credential.ob3Json ? JSON.parse(credential.ob3Json) : null;
+
+  // Machine consumers (API key) get the raw OB 3.0 JSON-LD.
+  if (!viaShare) return res.json(ob3);
+
+  // Human share page gets a render-ready shape (field names match SharedCredential.jsx).
+  // Include the signed JWT-VC so the viewer can independently verify authenticity.
+  const holder = db.users.findById(credential.holderId);
+  res.json({
+    credential: {
+      achievementName: credential.achievementName,
+      achievementDescription: credential.achievementDescription,
+      issuerName: credential.issuerName,
+      issuedAt: credential.issuedDate || credential.createdAt,
+      source: credential.source,
+      status: credential.status,
+      holderName: holder?.name || null,
+      holderEmail: holder?.email || null,
+      ob3Credential: ob3,
+      jwt: credential.jwt || null
+    },
+    sharedBy: holder?.name || 'Unknown'
+  });
 });
 
 // ── POST /api/verify ───────────────────────────────────────
-router.post('/verify', (req, res) => {
-  const { credential } = req.body;
-  if (!credential) return res.status(400).json({ error: 'credential field required' });
-
+// Accepts:
+//   { credential: <JSON object | JSON string | JWT compact string> }
+//   { jwt: <JWT compact string> }
+//   { url: <https URL returning JWT or JSON> }
+router.post('/verify', async (req, res) => {
   try {
-    const data = typeof credential === 'string' ? JSON.parse(credential) : credential;
+    const { credential, jwt, url } = req.body || {};
+    let input = jwt || credential || url;
+    if (!input) return res.status(400).json({ error: 'Provide credential, jwt, or url' });
+
+    // 1) URL: fetch it (SSRF-protected)
+    if (url || (typeof input === 'string' && /^https?:\/\//i.test(input.trim()))) {
+      const fetchUrl = localizeOwnIssuerUrl(url || input.trim());
+      try {
+        const r = await safeFetch(fetchUrl, { headers: { Accept: 'application/vc+jwt, application/vc+ld+json, application/jwt, application/json' } });
+        if (!r.ok) return res.status(400).json({ error: `Failed to fetch ${fetchUrl} (HTTP ${r.status})` });
+        input = await r.text();
+      } catch (e) {
+        return res.status(400).json({ error: `Fetch refused: ${e.message}` });
+      }
+    }
+
+    // 2) Detect: compact JWS has exactly two dots and three base64url segments
+    const looksLikeJwt = typeof input === 'string'
+      && input.trim().split('.').length === 3
+      && !input.trim().startsWith('{');
+
+    let vc, jwtResult = null;
+    if (looksLikeJwt) {
+      jwtResult = await jwtVc.verifyJwtCredential(input.trim());
+      vc = jwtResult.vc;
+    } else {
+      vc = typeof input === 'string' ? JSON.parse(input) : input;
+    }
+    if (!vc) {
+      return res.json({
+        verified: false,
+        mode: jwtResult ? 'jwt' : 'json',
+        checks: [{ name: 'parse', passed: false, message: 'Could not extract a credential payload from input' }],
+        errors: jwtResult?.errors || ['No credential payload found in input']
+      });
+    }
+
     const checks = [];
 
-    // 1. Check @context (required by W3C VC 2.0 and OB 3.0)
-    const hasContext = data['@context'] && (
-      data['@context'].includes('https://www.w3.org/ns/credentials/v2') ||
-      data['@context'].includes('https://www.w3.org/2018/credentials/v1')
+    // Structural checks
+    const hasContext = Array.isArray(vc['@context']) && (
+      vc['@context'].includes('https://www.w3.org/ns/credentials/v2') ||
+      vc['@context'].includes('https://www.w3.org/2018/credentials/v1')
     );
-    checks.push({ name: 'context', passed: hasContext, message: hasContext ? 'Valid W3C Verifiable Credentials context' : 'Missing valid W3C VC context' });
+    checks.push({ name: 'context', passed: hasContext, message: hasContext ? 'Valid W3C VC context' : 'Missing W3C VC context' });
 
-    // 2. Check OB 3.0 context
-    const hasObContext = data['@context'] && data['@context'].some(c =>
-      typeof c === 'string' && c.includes('purl.imsglobal.org/spec/ob/v3p0')
-    );
+    const hasObContext = Array.isArray(vc['@context']) && vc['@context'].some(c => typeof c === 'string' && c.includes('purl.imsglobal.org/spec/ob/v3p0'));
     checks.push({ name: 'obContext', passed: hasObContext, message: hasObContext ? 'Valid Open Badges 3.0 context' : 'Missing OB 3.0 context' });
 
-    // 3. Check type includes OpenBadgeCredential
-    const hasType = data.type && data.type.includes('OpenBadgeCredential');
-    checks.push({ name: 'type', passed: hasType, message: hasType ? 'Valid OpenBadgeCredential type' : 'Missing OpenBadgeCredential type' });
+    const hasType = Array.isArray(vc.type) && vc.type.includes('OpenBadgeCredential') && vc.type.includes('VerifiableCredential');
+    checks.push({ name: 'type', passed: hasType, message: hasType ? 'type includes VerifiableCredential + OpenBadgeCredential' : 'Missing required type values' });
 
-    // 4. Check issuer (Profile)
-    const hasIssuer = !!(data.issuer && (data.issuer.id || typeof data.issuer === 'string'));
-    const issuerHasProfile = data.issuer && data.issuer.type && data.issuer.type.includes('Profile');
-    checks.push({ name: 'issuer', passed: hasIssuer && issuerHasProfile, message: hasIssuer && issuerHasProfile ? 'Issuer Profile present with id and type' : 'Missing or incomplete issuer Profile' });
+    const issuerObj = typeof vc.issuer === 'string' ? { id: vc.issuer } : vc.issuer;
+    const hasIssuer = !!(issuerObj && issuerObj.id);
+    checks.push({ name: 'issuer', passed: hasIssuer, message: hasIssuer ? `Issuer: ${issuerObj.id}` : 'Missing issuer.id' });
 
-    // 5. Check credentialSubject
-    const hasSubject = !!data.credentialSubject;
-    const subjectHasType = data.credentialSubject?.type?.includes('AchievementSubject');
-    checks.push({ name: 'subject', passed: hasSubject && subjectHasType, message: hasSubject && subjectHasType ? 'AchievementSubject present' : 'Missing or invalid credentialSubject' });
+    const subjectHasType = vc.credentialSubject?.type === 'AchievementSubject'
+      || (Array.isArray(vc.credentialSubject?.type) && vc.credentialSubject.type.includes('AchievementSubject'));
+    checks.push({ name: 'subject', passed: !!subjectHasType, message: subjectHasType ? 'AchievementSubject present' : 'Missing/invalid credentialSubject' });
 
-    // 6. Check achievement
-    const hasAchievement = !!(data.credentialSubject && data.credentialSubject.achievement);
-    const achievementValid = hasAchievement && data.credentialSubject.achievement.name && data.credentialSubject.achievement.criteria;
-    checks.push({ name: 'achievement', passed: !!achievementValid, message: achievementValid ? 'Achievement with name and criteria present' : 'Missing or incomplete achievement' });
+    const ach = vc.credentialSubject?.achievement;
+    const achievementValid = ach && ach.name && ach.criteria;
+    checks.push({ name: 'achievement', passed: !!achievementValid, message: achievementValid ? `Achievement: ${ach.name}` : 'Missing/incomplete achievement' });
 
-    // 7. Check validFrom
-    const hasValidFrom = !!data.validFrom;
-    checks.push({ name: 'validFrom', passed: hasValidFrom, message: hasValidFrom ? `validFrom: ${data.validFrom}` : 'Missing validFrom date' });
+    const hasValidFrom = !!vc.validFrom;
+    checks.push({ name: 'validFrom', passed: hasValidFrom, message: hasValidFrom ? `validFrom: ${vc.validFrom}` : 'Missing validFrom' });
 
-    // 8. Check credentialSchema (recommended for interoperability)
-    const hasSchema = !!(data.credentialSchema && data.credentialSchema.length > 0);
-    checks.push({ name: 'credentialSchema', passed: hasSchema, message: hasSchema ? 'credentialSchema reference present (1EdTechJsonSchemaValidator2019)' : 'Missing credentialSchema (recommended for interoperability)' });
+    // validUntil (expiry) check
+    let notExpired = true;
+    if (vc.validUntil) {
+      notExpired = new Date(vc.validUntil).getTime() > Date.now();
+    }
+    checks.push({
+      name: 'expiry',
+      passed: notExpired,
+      message: vc.validUntil ? (notExpired ? `Not expired (validUntil: ${vc.validUntil})` : `EXPIRED on ${vc.validUntil}`) : 'No validUntil (no expiry)'
+    });
 
-    // 9. Check subject identifier (recommended for binding to person)
-    const hasIdentifier = !!(data.credentialSubject?.identifier && data.credentialSubject.identifier.length > 0);
-    checks.push({ name: 'identifier', passed: hasIdentifier, message: hasIdentifier ? 'Subject identity binding present (IdentityObject)' : 'Missing credentialSubject.identifier (recommended)' });
+    const hasSchema = Array.isArray(vc.credentialSchema) && vc.credentialSchema.length > 0;
+    checks.push({ name: 'credentialSchema', passed: hasSchema, message: hasSchema ? 'credentialSchema reference present' : 'Missing credentialSchema (recommended)' });
 
-    // 10. Check if registered in this wallet
-    const credUuid = data.id?.startsWith('urn:uuid:') ? data.id.replace('urn:uuid:', '') : data.id;
+    const identifiers = vc.credentialSubject?.identifier;
+    const hasIdentifier = Array.isArray(identifiers) && identifiers.length > 0;
+    const hashedOk = hasIdentifier && identifiers.every(i => i.hashed === true ? typeof i.identityHash === 'string' && i.identityHash.startsWith('sha256$') : !!i.identityHash);
+    checks.push({ name: 'identifier', passed: hasIdentifier && hashedOk, message: hasIdentifier ? (hashedOk ? 'IdentityObject(s) present' : 'IdentityObject hash format invalid') : 'Missing credentialSubject.identifier' });
+
+    // Signature check (only for JWT input)
+    if (jwtResult) {
+      checks.push({
+        name: 'signature',
+        passed: jwtResult.verified,
+        message: jwtResult.verified
+          ? `ES256 signature verified against ${jwtResult.header?.kid}`
+          : `Signature verification failed: ${(jwtResult.errors || []).join('; ')}`
+      });
+      checks.push({
+        name: 'didResolution',
+        passed: !!jwtResult.didDocument,
+        message: jwtResult.didDocument ? `Resolved DID document for ${jwtResult.issuerDid}` : `Could not resolve DID document for ${jwtResult.issuerDid || '(unknown)'}`
+      });
+    } else {
+      checks.push({ name: 'signature', passed: false, message: 'No JWT provided — cryptographic signature could not be verified (paste JWT for full verification)' });
+    }
+
+    // Status list (revocation) check — supports BitstringStatusListEntry + StatusList2021Entry
+    let statusOk = true;
+    let statusMessage = 'No credentialStatus present';
+    let statusListSigned = null; // tri-state: null=n/a, true/false
+    const cs = vc.credentialStatus;
+    const supportedStatusTypes = ['BitstringStatusListEntry', 'StatusList2021Entry'];
+    if (cs && supportedStatusTypes.includes(cs.type)) {
+      try {
+        const listCredUrl = cs.statusListCredential;
+        const idx = parseInt(cs.statusListIndex, 10);
+        // Fetch JWT (default content-type) and verify signature; fallback to JSON.
+        // Own-issuer status lists resolve over loopback so self-verification never
+        // depends on the public issuer URL being reachable.
+        const r = await safeFetch(localizeOwnIssuerUrl(listCredUrl), { headers: { Accept: 'application/vc+jwt, application/vc+ld+json' } });
+        if (!r.ok) throw new Error(`HTTP ${r.status}`);
+        const ct = (r.headers.get('content-type') || '').toLowerCase();
+        const body = await r.text();
+        let listCred;
+        if (ct.includes('jwt') || (body.split('.').length === 3 && !body.trim().startsWith('{'))) {
+          const verifyRes = await jwtVc.verifyJwtCredential(body.trim());
+          statusListSigned = verifyRes.verified;
+          listCred = verifyRes.vc;
+          if (!statusListSigned) {
+            throw new Error(`Status list signature invalid: ${(verifyRes.errors || []).join('; ')}`);
+          }
+        } else {
+          statusListSigned = false;
+          listCred = JSON.parse(body);
+        }
+        const encoded = listCred?.credentialSubject?.encodedList;
+        if (!encoded) throw new Error('encodedList missing');
+        const buf = statusList.decodeEncodedList(encoded);
+        const byteIdx = Math.floor(idx / 8);
+        const bitIdx = idx % 8;
+        const revoked = (buf[byteIdx] & (1 << bitIdx)) !== 0;
+        statusOk = !revoked;
+        statusMessage = revoked ? `REVOKED (index ${idx} in ${listCredUrl})` : `Not revoked (index ${idx}, list ${cs.type})`;
+      } catch (e) {
+        statusOk = false;
+        statusMessage = `Status list fetch/verify failed: ${e.message}`;
+      }
+    } else if (cs) {
+      statusOk = false;
+      statusMessage = `Unsupported credentialStatus.type: ${cs.type}`;
+    }
+    checks.push({ name: 'status', passed: statusOk, message: statusMessage });
+    if (statusListSigned !== null) {
+      checks.push({
+        name: 'statusListSignature',
+        passed: !!statusListSigned,
+        message: statusListSigned ? 'Status list itself is a signed JWT-VC' : 'Status list is NOT a signed VC (VCDM 2.0 requires signed status list)'
+      });
+    }
+
+    // Local registration (informational)
+    const credUuid = vc.id?.startsWith('urn:uuid:')
+      ? vc.id.replace('urn:uuid:', '')
+      : (vc.id?.split('/').pop() || vc.id);
     const inDb = credUuid ? db.credentials.findById(credUuid) : null;
-    checks.push({ name: 'registered', passed: !!inDb, message: inDb ? `Registered in wallet (status: ${inDb.status})` : 'Not registered in this wallet' });
+    checks.push({ name: 'registered', passed: !!inDb, message: inDb ? `Registered in this wallet (status: ${inDb.status})` : 'Not registered in this wallet (informational)' });
 
-    // Core checks (context, type, issuer, subject, achievement, validFrom) must all pass
-    const coreChecks = ['context', 'type', 'issuer', 'subject', 'achievement', 'validFrom'];
+    // Core required checks (signature is core when JWT was supplied)
+    const coreChecks = ['context', 'obContext', 'type', 'issuer', 'subject', 'achievement', 'validFrom', 'expiry', 'identifier', 'status'];
+    if (jwtResult) coreChecks.push('signature', 'didResolution');
     const verified = checks.filter(c => coreChecks.includes(c.name)).every(c => c.passed);
 
     res.json({
       verified,
+      mode: jwtResult ? 'jwt' : 'json',
       checks,
-      credentialId: data.id || null,
-      issuerName: data.issuer?.name || data.issuer?.id || null,
-      achievementName: data.credentialSubject?.achievement?.name || null,
-      achievementType: data.credentialSubject?.achievement?.achievementType || null
+      credentialId: vc.id || null,
+      issuerName: issuerObj?.name || issuerObj?.id || null,
+      issuerDid: jwtResult?.issuerDid || (typeof issuerObj?.id === 'string' && issuerObj.id.startsWith('did:') ? issuerObj.id : null),
+      achievementName: ach?.name || null,
+      achievementType: Array.isArray(ach?.type) ? ach.type[0] : ach?.achievementType || null,
+      jwt: jwtResult ? { header: jwtResult.header, claims: { iss: jwtResult.payload?.iss, sub: jwtResult.payload?.sub, jti: jwtResult.payload?.jti, iat: jwtResult.payload?.iat, nbf: jwtResult.payload?.nbf, exp: jwtResult.payload?.exp } } : null
     });
   } catch (e) {
-    res.status(400).json({ error: 'Invalid JSON', detail: e.message });
+    console.error('verify error:', e);
+    res.status(400).json({ error: 'Verification failed', detail: e.message });
   }
 });
 
@@ -290,39 +454,6 @@ router.get('/students/:id/credentials', apiKeyMiddleware, (req, res) => {
   res.json({
     student: { id: student.id, name: student.name, email: student.email, studentId: student.studentId },
     credentials: creds
-  });
-});
-
-// ── GET /api/public-credentials/:id?token=... ──────────────
-// Public (no auth) – view a shared credential via share token
-router.get('/public-credentials/:id', (req, res) => {
-  const { token } = req.query;
-  if (!token) return res.status(400).json({ error: 'Share token required' });
-
-  const share = db.shares.findByToken(token);
-  if (!share || share.credentialId !== req.params.id) {
-    return res.status(404).json({ error: 'Share link not found or expired' });
-  }
-  if (share.expiresAt && new Date(share.expiresAt) < new Date()) {
-    return res.status(410).json({ error: 'This share link has expired' });
-  }
-
-  const cred = db.credentials.findById(share.credentialId);
-  if (!cred) return res.status(404).json({ error: 'Credential not found' });
-
-  const holder = db.users.findById(cred.holderId);
-  db.shares.incrementView(token);
-
-  res.json({
-    credential: {
-      achievementName: cred.achievementName,
-      achievementDescription: cred.achievementDescription,
-      issuerName: cred.issuerName,
-      issuedDate: cred.issuedDate,
-      source: cred.source,
-      ob3Credential: cred.ob3Json ? JSON.parse(cred.ob3Json) : null
-    },
-    sharedBy: holder?.name || 'Unknown'
   });
 });
 

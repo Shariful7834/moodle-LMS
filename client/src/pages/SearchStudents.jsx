@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { searchStudents, getStudentCredentials } from '../services/api';
 import { Search, User, Award, ChevronRight, ArrowLeft } from 'lucide-react';
+import PageHeader from '../components/ui/PageHeader';
+import EmptyState from '../components/ui/EmptyState';
 
 export default function SearchStudents() {
   const [query, setQuery] = useState('');
@@ -103,10 +105,11 @@ export default function SearchStudents() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Search Students</h1>
-        <p className="text-gray-500 text-sm mt-1">Search by enrollment number, email, or name to view student achievements</p>
-      </div>
+      <PageHeader
+        icon={Search}
+        title="Search Students"
+        subtitle="Search by enrollment number, email, or name to view student achievements."
+      />
 
       <form onSubmit={handleSearch} className="bg-white rounded-xl border border-gray-200 p-4 mb-4">
         <div className="flex gap-2">
@@ -133,11 +136,11 @@ export default function SearchStudents() {
       {loading ? (
         <div className="flex items-center justify-center py-16"><div className="animate-spin rounded-full h-8 w-8 border-b-2 border-indigo-600"></div></div>
       ) : searched && students.length === 0 ? (
-        <div className="text-center py-16 bg-white rounded-xl border border-gray-200">
-          <User className="w-12 h-12 text-gray-300 mx-auto mb-4" />
-          <p className="text-gray-500 font-medium">No students found</p>
-          <p className="text-gray-400 text-sm mt-1">Try a different search term</p>
-        </div>
+        <EmptyState
+          icon={User}
+          title="No students found"
+          description="Try a different search term — an enrollment number, email, or name."
+        />
       ) : students.length > 0 && (
         <div className="bg-white rounded-xl border border-gray-200 divide-y divide-gray-100">
           {students.map(s => (

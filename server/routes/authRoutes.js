@@ -1,12 +1,22 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
+const rateLimit = require('express-rate-limit');
 const db = require('../db');
 const { signToken, authMiddleware } = require('../auth');
 
 const router = express.Router();
 
+// 10 attempts / 15 min / IP — protects login + register from brute force
+const authLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 10,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { error: 'Too many authentication attempts. Try again later.' }
+});
+
 // POST /auth/login
-router.post('/login', (req, res) => {
+router.post('/login', authLimiter, (req, res) => {
   const { email, password } = req.body;
   if (!email || !password) return res.status(400).json({ error: 'Email and password are required' });
 
@@ -26,7 +36,7 @@ router.post('/login', (req, res) => {
 });
 
 // POST /auth/register
-router.post('/register', (req, res) => {
+router.post('/register', authLimiter, (req, res) => {
   const { email, password, name, role, studentId } = req.body;
   if (!email || !password || !name) return res.status(400).json({ error: 'email, password, name are required' });
 

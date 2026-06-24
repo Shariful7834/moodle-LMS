@@ -10,6 +10,7 @@ import {
   Trash2, Plus, Eye, FileText, Activity, Image, FileJson, File, Search,
   ExternalLink, Copy
 } from 'lucide-react';
+import PageHeader from '../components/ui/PageHeader';
 import toast from 'react-hot-toast';
 import { appConfig } from '../config/appConfig';
 
@@ -82,6 +83,10 @@ export default function AdminPanel() {
       achievementDescription: ann?.achievementDescription || u.description || '',
       issuerName: ann?.source || '',
       criteria: ann?.criteria || '',
+      imageUrl: '',
+      tags: '',
+      frameworkName: '',
+      frameworkCode: ann?.courseId || '',
       notes: ''
     });
   };
@@ -99,6 +104,10 @@ export default function AdminPanel() {
         achievementDescription: verifyForm.achievementDescription,
         issuerName: verifyForm.issuerName,
         criteria: verifyForm.criteria,
+        imageUrl: verifyForm.imageUrl,
+        tags: verifyForm.tags,
+        frameworkName: verifyForm.frameworkName,
+        frameworkCode: verifyForm.frameworkCode,
         notes: verifyForm.notes
       });
       toast.success('Upload verified – OB 3.0 credential issued!');
@@ -106,6 +115,20 @@ export default function AdminPanel() {
       setVerifyForm(null);
     } catch (err) { toast.error(err.response?.data?.error || 'Failed'); }
     finally { setActionLoading(null); }
+  };
+
+  const onLogoFile = async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (!['image/png', 'image/jpeg', 'image/svg+xml'].includes(file.type)) {
+      toast.error('PNG, JPG or SVG only'); e.target.value = ''; return;
+    }
+    if (file.size > 200 * 1024) { toast.error('Image must be ≤ 200 KB'); e.target.value = ''; return; }
+    const dataUrl = await new Promise((res) => {
+      const r = new FileReader(); r.onload = () => res(r.result); r.readAsDataURL(file);
+    });
+    setVerifyForm(p => ({ ...p, imageUrl: dataUrl }));
+    e.target.value = '';
   };
 
   const handleRejectUpload = async (id) => {
@@ -176,10 +199,11 @@ export default function AdminPanel() {
 
   return (
     <div className="max-w-5xl mx-auto">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Admin Panel</h1>
-        <p className="text-gray-500 text-sm mt-1">Verify student uploads, manage users, test Moodle API</p>
-      </div>
+      <PageHeader
+        icon={Shield}
+        title="Admin Panel"
+        subtitle="Verify student uploads, manage users, and test the Moodle API."
+      />
 
       {/* Tabs */}
       <div className="flex flex-wrap gap-2 mb-4">
@@ -324,6 +348,44 @@ export default function AdminPanel() {
                                     <input value={verifyForm.notes}
                                       onChange={e => setVerifyForm(p => ({ ...p, notes: e.target.value }))}
                                       placeholder="Internal notes"
+                                      className="w-full px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
+                                  </div>
+                                </div>
+                                <div className="mb-3">
+                                  <label className="block text-xs text-green-700 mb-1">Badge logo (institution / block-week — issuer branding, optional)</label>
+                                  <div className="flex items-center gap-3">
+                                    {verifyForm.imageUrl ? (
+                                      <div className="relative">
+                                        <img src={verifyForm.imageUrl} alt="logo preview" className="h-12 w-12 object-contain rounded border border-green-200 bg-white" />
+                                        <button type="button" onClick={() => setVerifyForm(p => ({ ...p, imageUrl: '' }))}
+                                          className="absolute -top-1.5 -right-1.5 bg-red-500 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px]">×</button>
+                                      </div>
+                                    ) : null}
+                                    <label className="inline-flex items-center gap-1.5 px-3 py-2 border border-dashed border-green-300 rounded-lg text-xs text-green-700 cursor-pointer hover:bg-green-50">
+                                      <Upload className="w-3.5 h-3.5" />
+                                      {verifyForm.imageUrl ? 'Replace logo' : 'Upload logo (PNG/JPG ≤ 200 KB)'}
+                                      <input type="file" accept="image/png,image/jpeg,image/svg+xml" onChange={onLogoFile} className="hidden" />
+                                    </label>
+                                  </div>
+                                  <input value={/^data:/.test(verifyForm.imageUrl) ? '' : verifyForm.imageUrl}
+                                    onChange={e => setVerifyForm(p => ({ ...p, imageUrl: e.target.value }))}
+                                    placeholder="…or paste an https image URL"
+                                    className="w-full mt-2 px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
+                                </div>
+                                <div className="mb-3">
+                                  <p className="text-xs font-semibold text-green-800 mb-1">Recognition fields (let the LMS match this badge — Pre-check)</p>
+                                  <input value={verifyForm.tags}
+                                    onChange={e => setVerifyForm(p => ({ ...p, tags: e.target.value }))}
+                                    placeholder="Tags (comma-separated, e.g. block-week, robotics)"
+                                    className="w-full mb-2 px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
+                                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                                    <input value={verifyForm.frameworkName}
+                                      onChange={e => setVerifyForm(p => ({ ...p, frameworkName: e.target.value }))}
+                                      placeholder="Framework name (e.g. CEFR)"
+                                      className="w-full px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
+                                    <input value={verifyForm.frameworkCode}
+                                      onChange={e => setVerifyForm(p => ({ ...p, frameworkCode: e.target.value }))}
+                                      placeholder="Alignment code (e.g. B2, ROB-101)"
                                       className="w-full px-3 py-2 border border-green-300 rounded-lg text-sm bg-white focus:ring-2 focus:ring-green-500 outline-none" />
                                   </div>
                                 </div>

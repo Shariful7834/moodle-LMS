@@ -49,6 +49,18 @@ export const getUploadFileUrl = (uploadId) => {
 export const getCredentials = () => api.get('/api/credentials');
 export const getCredential = (id) => api.get(`/api/credentials/${id}`);
 export const shareCredential = (id, expiresInDays) => api.post(`/api/credentials/${id}/share`, { expiresInDays });
+export const getCredentialJwt = (id) => api.get(`/api/credentials/${id}/jwt`, { responseType: 'text', transformResponse: [(d) => d] });
+export const getCredentialJwtUrl = (id, download = false) => {
+  // Public issuer URL — credential UUIDs are unguessable; matches OB 3.0 dereferenceable id pattern
+  const dl = download ? '&download=1' : '';
+  return buildApiUrl(`/api/badges/credentials/${id}?format=jwt${dl}`);
+};
+export const revokeCredential = (id, reason) => api.post(`/api/credentials/${id}/revoke`, { reason });
+export const unrevokeCredential = (id) => api.post(`/api/credentials/${id}/unrevoke`);
+
+/* ── Issuer / DID ─────────────────────────────────────────── */
+export const getDidDocument = () => api.get('/api/badges/issuer/did.json');
+export const getIssuerProfile = () => api.get('/api/badges/issuer');
 
 /* ── Admin ────────────────────────────────────────────────── */
 export const getAdminStats = () => api.get('/api/admin/stats');
@@ -73,6 +85,8 @@ export const getStudentCredentials = (studentId) => api.get(`/api/credentials/st
 export const announceCertificate = (data, apiKey) =>
   api.post('/api/announce-certificate', data, { headers: { 'X-API-Key': apiKey } });
 export const verifyCredential = (credential) => api.post('/api/verify', { credential });
+export const verifyJwt = (jwt) => api.post('/api/verify', { jwt });
+export const verifyByUrl = (url) => api.post('/api/verify', { url });
 export const getPublicCredential = (id, shareToken) => api.get(`/api/public-credentials/${id}?token=${shareToken}`);
 export const getApiHealth = () => api.get('/api/health');
 export const getApiInfo = () => api.get('/api/info');

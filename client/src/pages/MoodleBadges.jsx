@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { getMoodleBadges, importMoodleBadge } from '../services/api';
 import { Download, CheckCircle, Loader2, AlertCircle, GraduationCap } from 'lucide-react';
+import PageHeader from '../components/ui/PageHeader';
+import EmptyState from '../components/ui/EmptyState';
 
 export default function MoodleBadges() {
   const [badges, setBadges] = useState([]);
@@ -53,15 +55,11 @@ export default function MoodleBadges() {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="mb-6">
-        <h1 className="text-2xl font-bold text-gray-900 flex items-center gap-2">
-          <GraduationCap className="w-7 h-7 text-indigo-600" />
-          Moodle Badges
-        </h1>
-        <p className="text-gray-500 mt-1">
-          Import your Moodle badges into your Academic Wallet as Open Badges 3.0 credentials
-        </p>
-      </div>
+      <PageHeader
+        icon={GraduationCap}
+        title="Moodle Badges"
+        subtitle="Import your Moodle badges into your Academic Wallet as signed Open Badges 3.0 credentials."
+      />
 
       {error && (
         <div className="mb-4 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center gap-2 text-red-700">
@@ -78,13 +76,12 @@ export default function MoodleBadges() {
       )}
 
       {badges.length === 0 && !error ? (
-        <div className="text-center py-16 bg-white rounded-xl border border-gray-200">
-          <GraduationCap className="w-12 h-12 text-gray-300 mx-auto mb-3" />
-          <p className="text-gray-500">No Moodle badges found for your account.</p>
-          <p className="text-sm text-gray-400 mt-1">
-            Make sure your wallet email matches your Moodle account email.
-          </p>
-        </div>
+        <EmptyState
+          icon={GraduationCap}
+          title="No Moodle badges found for your account"
+          description="Make sure your wallet email matches your Moodle account email. You can also upload a certificate instead."
+          actions={[{ label: 'Upload Certificate', to: '/upload', icon: Download }]}
+        />
       ) : (
         <div className="space-y-4">
           {badges.map((badge) => (
