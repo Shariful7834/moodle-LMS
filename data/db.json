@@ -80,1065 +80,264 @@
       "name": "Mahdi",
       "role": "student",
       "studentId": null
+    },
+    {
+      "id": 11,
+      "createdAt": "2026-05-27T08:56:18.216Z",
+      "email": "sharif01@gmail.com",
+      "password": "$2a$10$supKF.nZWyPmq6wQWsrdaOrzvjcCJgbmn0BOwYTfpGrc2vQRUF4jm",
+      "name": "Shariful",
+      "role": "student",
+      "studentId": null
+    },
+    {
+      "id": 12,
+      "createdAt": "2026-06-24T00:00:52.964Z",
+      "email": "engr.shariful.cse@gmail.com",
+      "password": "$2a$10$UClxrMoIg2HRD06Rde1wfO34nsA5yH/bQGOhFe5NnMl0Vjv.OZn2q",
+      "name": "Md Shariful ",
+      "role": "admin",
+      "studentId": null
     }
   ],
   "announcements": [
     {
-      "id": "5aee6823-9a3b-4355-86a0-8610f0b679ac",
+      "id": "be674a16-4cdd-466a-8994-da21128ff14e",
       "source": "moodle",
-      "sourceName": "Moodle -LMS - Admin",
-      "achievementName": "AWS Cloud Certificate",
-      "achievementDescription": "Submit your AWS Cloud Certificate to get join in cloud seminar",
+      "sourceName": "Moodle LMS — Language Dept",
+      "achievementName": "German Language Certificate B2",
+      "achievementDescription": "Proof of CEFR level B2 German proficiency required for enrollment.",
       "achievementType": "Certificate",
-      "courseId": "AWSC",
-      "criteria": null,
-      "expiresAt": "2026-05-08T12:06:34.896Z",
-      "createdAt": "2026-04-08T12:06:34.897Z"
-    },
-    {
-      "id": "b4247c37-61ea-4f2e-b06e-fcc9c8cc4c69",
-      "source": "moodle",
-      "sourceName": "Moodle -LMS- Admin",
-      "achievementName": "German A2",
-      "achievementDescription": "please provide your German A2 Certificate for getting enrolled in TS2",
-      "achievementType": "Certificate",
-      "courseId": "TS",
-      "criteria": null,
-      "expiresAt": "2026-05-09T06:46:35.355Z",
-      "createdAt": "2026-04-09T06:46:35.355Z"
-    },
-    {
-      "id": "aad9f913-0f33-4899-ae6f-73e889627f73",
-      "source": "moodle",
-      "sourceName": "Moodle LMS - Admin User",
-      "achievementName": "Java Advance certificate",
-      "achievementDescription": "",
-      "achievementType": "Certificate",
-      "courseId": null,
-      "criteria": null,
-      "expiresAt": "2026-05-09T08:17:20.089Z",
-      "createdAt": "2026-04-09T08:17:20.089Z"
-    },
-    {
-      "id": "596ca276-3a25-4090-b660-96efba4df539",
-      "source": "moodle",
-      "sourceName": "Moodle LMS - Admin User",
-      "achievementName": "German B2",
-      "achievementDescription": "Please submit your B2 Certificate ",
-      "achievementType": "Certificate",
-      "courseId": null,
-      "criteria": null,
-      "expiresAt": "2026-05-09T08:34:49.542Z",
-      "createdAt": "2026-04-09T08:34:49.542Z"
-    },
-    {
-      "id": "343c5084-6ac9-49ae-b518-34ec8488f298",
-      "source": "moodle",
-      "sourceName": "Moodle LMS - Admin User",
-      "achievementName": "A2 German Certificate ",
-      "achievementDescription": "For getting enroll TS2",
-      "achievementType": "Certificate",
-      "courseId": null,
-      "criteria": null,
-      "expiresAt": "2026-05-15T04:39:46.750Z",
-      "createdAt": "2026-04-15T04:39:46.750Z"
+      "courseId": "DEU-201",
+      "criteria": "Submit your official Goethe/TELC B2 certificate for verification.",
+      "expiresAt": "2026-07-24T00:16:18.599Z",
+      "createdAt": "2026-06-24T00:16:18.600Z"
     }
   ],
   "claims": [],
-  "uploads": [
-    {
-      "id": "c17748d2-0d18-453e-884a-be57bb1795b1",
-      "studentId": 4,
-      "studentEmail": "shariful.cse01@gmail.com",
-      "studentName": "shariful",
-      "certificateName": "Zeugnis",
-      "description": "Zeugnis",
-      "fileInfo": {
-        "originalName": "zeugnis_isdsoftwareundsystemegmbh.pdf",
-        "storedName": "bd34e284-387f-47ee-a109-9808ddce0bd1.pdf",
-        "mimeType": "application/pdf",
-        "size": 347527
-      },
-      "status": "rejected",
-      "adminNotes": "Rejected by admin",
-      "createdAt": "2026-03-29T10:30:26.034Z",
-      "updatedAt": "2026-03-29T10:33:15.093Z",
-      "rejectedBy": 1
-    },
-    {
-      "id": "b8f9660e-21a9-442f-9bbd-704d62285291",
-      "studentId": 4,
-      "studentEmail": "shariful.cse01@gmail.com",
-      "studentName": "shariful",
-      "certificateName": "Zeugnis",
-      "description": "Zeugnis",
-      "fileInfo": {
-        "originalName": "zeugnis_isdsoftwareundsystemegmbh.pdf",
-        "storedName": "43e3e914-fceb-4f1e-9884-7ac57b4c5d70.pdf",
-        "mimeType": "application/pdf",
-        "size": 347527
-      },
-      "status": "rejected",
-      "adminNotes": "Rejected by admin",
-      "createdAt": "2026-03-29T10:34:07.793Z",
-      "updatedAt": "2026-03-29T10:34:44.066Z",
-      "rejectedBy": 1
-    },
-    {
-      "id": "92bf73aa-cae3-4f28-b485-19aced972325",
-      "studentId": 4,
-      "studentEmail": "shariful.cse01@gmail.com",
-      "studentName": "shariful",
-      "certificateName": "DSA",
-      "description": "DSA",
-      "fileInfo": {
-        "originalName": "zeugnis_isdsoftwareundsystemegmbh.pdf",
-        "storedName": "f9dccf77-7c55-4334-b24f-97e9159d1406.pdf",
-        "mimeType": "application/pdf",
-        "size": 347527
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "createdAt": "2026-03-29T11:18:50.603Z",
-      "updatedAt": "2026-04-05T21:06:58.919Z",
-      "verifiedBy": 1,
-      "credentialId": "a61579b7-51d0-4ecb-9684-9a98e6061127"
-    },
-    {
-      "id": "77423351-c57b-467f-9639-01cfc2658ccf",
-      "studentId": 2,
-      "studentEmail": "student@university.edu",
-      "studentName": "Max Mustermann",
-      "certificateName": "zeugnis_isdsoftwareundsystemegmbh",
-      "description": "Testimonial from ISD Group",
-      "fileInfo": {
-        "originalName": "zeugnis_isdsoftwareundsystemegmbh.pdf",
-        "storedName": "2f97b2e2-6f22-40cd-8eda-6b5a18861f9b.pdf",
-        "mimeType": "application/pdf",
-        "size": 347527
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "announcementId": null,
-      "announcementName": null,
-      "announcementSource": null,
-      "createdAt": "2026-04-03T16:05:04.518Z",
-      "updatedAt": "2026-04-03T16:05:40.442Z",
-      "verifiedBy": 1,
-      "credentialId": "fa99b57f-823d-4f01-9135-40a1f0b4653b"
-    },
-    {
-      "id": "9fd0ceff-ef44-42bf-b549-b25a3c8fee76",
-      "studentId": 2,
-      "studentEmail": "student@university.edu",
-      "studentName": "Max Mustermann",
-      "certificateName": "German Language Certificate B1",
-      "description": "B1 level German language proficiency certificate required for enrollment",
-      "fileInfo": {
-        "originalName": "Acceptance Letter_Md Shariful Islam.pdf",
-        "storedName": "2529d0d2-3908-4507-a213-3288534cc75b.pdf",
-        "mimeType": "application/pdf",
-        "size": 224330
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "announcementId": "3a06551c-a334-4d43-8ec7-0b1036d31c93",
-      "announcementName": "German Language Certificate B1",
-      "announcementSource": "Moodle LMS - FH Dortmund",
-      "createdAt": "2026-04-03T16:48:05.360Z",
-      "updatedAt": "2026-04-29T07:33:52.979Z",
-      "verifiedBy": 1,
-      "credentialId": "bb86fe7b-83e6-4ce2-850f-3416b83571a2"
-    },
-    {
-      "id": "daa61b15-5324-4794-b6cd-19f554b6488b",
-      "studentId": 6,
-      "studentEmail": "prottoy@gmail.com",
-      "studentName": "Prottoy Ahammed",
-      "certificateName": "Web Development Fundamentals",
-      "description": "Completed Full-Stack Web Development course",
-      "fileInfo": {
-        "originalName": "0406bcf2-ff47-432e-bb62-9ea63263f4c0.jpeg",
-        "storedName": "afcc68cd-71c1-4fe9-90ee-22b47d4ab908.jpg",
-        "mimeType": "image/jpeg",
-        "size": 700328
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "announcementId": "269af97e-8695-4162-8d0d-341cc50c80b4",
-      "announcementName": "Web Development Fundamentals",
-      "announcementSource": "Moodle Platform",
-      "createdAt": "2026-04-03T17:02:47.800Z",
-      "updatedAt": "2026-04-03T17:03:33.240Z",
-      "verifiedBy": 1,
-      "credentialId": "f295a768-f352-4d35-bc1a-d9a4f247c2a7"
-    },
-    {
-      "id": "5b8990e1-0f9c-458a-9d0a-164db55e79de",
-      "studentId": 2,
-      "studentEmail": "student@university.edu",
-      "studentName": "Max Mustermann",
-      "certificateName": "A2 Deutsch Certificate",
-      "description": "To get the course Transversial Skills 2 you need to submit A2 certificate",
-      "fileInfo": {
-        "originalName": "ffbf4496-2c81-462e-8ce8-2dddb4e91afc.jpeg",
-        "storedName": "c8556e66-4fd3-4283-8e21-5a77f2f1fa3b.jpg",
-        "mimeType": "image/jpeg",
-        "size": 215656
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "announcementId": "525e97ed-e7b9-49af-9bb4-3a2bd388cb76",
-      "announcementName": "A2 Deutsch Certificate",
-      "announcementSource": "Moodle LMS",
-      "createdAt": "2026-04-05T20:59:46.345Z",
-      "updatedAt": "2026-04-05T21:04:44.052Z",
-      "verifiedBy": 1,
-      "credentialId": "bb3bf292-d46b-48b7-ba4f-d1b7414210e6"
-    },
-    {
-      "id": "f0a8b0f1-3bb7-4f28-a42b-766ee5070006",
-      "studentId": 5,
-      "studentEmail": "sanjida@gmail.com",
-      "studentName": "Sanjida",
-      "certificateName": "AWS Cloud Certificate",
-      "description": "Submit your AWS Cloud Certificate to get join in cloud seminar",
-      "fileInfo": {
-        "originalName": "ffbf4496-2c81-462e-8ce8-2dddb4e91afc.jpeg",
-        "storedName": "ce2c7316-20c6-416f-8723-ea550c66f879.jpg",
-        "mimeType": "image/jpeg",
-        "size": 215656
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "announcementId": "5aee6823-9a3b-4355-86a0-8610f0b679ac",
-      "announcementName": "AWS Cloud Certificate",
-      "announcementSource": "Moodle -LMS - Admin",
-      "createdAt": "2026-04-08T12:07:22.868Z",
-      "updatedAt": "2026-04-08T12:08:36.954Z",
-      "verifiedBy": 1,
-      "credentialId": "75b1a8a1-e520-4c68-b3b3-aa09c0c63fe4"
-    },
-    {
-      "id": "b746ef01-6d9d-474d-a3c9-016bc4ea3c9e",
-      "studentId": 8,
-      "studentEmail": "shariful@gmail.com",
-      "studentName": "Md Shariful Islam",
-      "certificateName": "AWS Cloud Certificate",
-      "description": "Submit your AWS Cloud Certificate to get join in cloud seminar",
-      "fileInfo": {
-        "originalName": "Moodle LMS and Wallet-2026-04-09-051926.png",
-        "storedName": "991eed59-0f57-4f1c-8569-d082ec17806e.png",
-        "mimeType": "image/png",
-        "size": 940299
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "announcementId": "5aee6823-9a3b-4355-86a0-8610f0b679ac",
-      "announcementName": "AWS Cloud Certificate",
-      "announcementSource": "Moodle -LMS - Admin",
-      "createdAt": "2026-04-09T06:39:59.015Z",
-      "updatedAt": "2026-04-09T06:41:31.794Z",
-      "verifiedBy": 1,
-      "credentialId": "7f377981-9927-4eb2-9934-fdaadebbcb47"
-    },
-    {
-      "id": "53b5fc45-e28e-455e-a681-e7280999bb02",
-      "studentId": 9,
-      "studentEmail": "sharif@gmail.com",
-      "studentName": "Shariful Islam",
-      "certificateName": "German A2",
-      "description": "please provide your German A2 Certificate for getting enrolled in TS2",
-      "fileInfo": {
-        "originalName": "Moodle LMS and Wallet-2026-04-09-051746.png",
-        "storedName": "026a8cab-da6a-4f04-a4aa-b0692482c99b.png",
-        "mimeType": "image/png",
-        "size": 2545754
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "announcementId": "b4247c37-61ea-4f2e-b06e-fcc9c8cc4c69",
-      "announcementName": "German A2",
-      "announcementSource": "Moodle -LMS- Admin",
-      "createdAt": "2026-04-09T08:12:06.341Z",
-      "updatedAt": "2026-04-09T08:13:40.737Z",
-      "verifiedBy": 1,
-      "credentialId": "edecf7f0-0add-4ae4-84c6-3704bf6cef9f"
-    },
-    {
-      "id": "2090f3f5-6dd2-4d9f-b0e4-270f727871f8",
-      "studentId": 10,
-      "studentEmail": "mahdi@gmail.com",
-      "studentName": "Mahdi",
-      "certificateName": "AWS Cloud Certificate",
-      "description": "Submit your AWS Cloud Certificate to get join in cloud seminar",
-      "fileInfo": {
-        "originalName": "Moodle LMS and Wallet-2026-04-09-051746.png",
-        "storedName": "9d5f26cb-1f02-45b4-b92b-8e5b48ed3c81.png",
-        "mimeType": "image/png",
-        "size": 2545754
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "announcementId": "5aee6823-9a3b-4355-86a0-8610f0b679ac",
-      "announcementName": "AWS Cloud Certificate",
-      "announcementSource": "Moodle -LMS - Admin",
-      "createdAt": "2026-04-09T08:30:07.654Z",
-      "updatedAt": "2026-04-09T08:30:55.776Z",
-      "verifiedBy": 1,
-      "credentialId": "d6774aaa-36f5-482f-bcd8-7f5cf7977c2d"
-    },
-    {
-      "id": "03d275df-e7d9-4be4-b7f6-fcc4a1fe227e",
-      "studentId": 4,
-      "studentEmail": "shariful.cse01@gmail.com",
-      "studentName": "shariful",
-      "certificateName": "A2 German Certificate",
-      "description": "For getting enroll TS2",
-      "fileInfo": {
-        "originalName": "Credential Issuance Flow-2026-04-12-053714.png",
-        "storedName": "a22517b5-abfd-4db7-b50d-338c79fcc481.png",
-        "mimeType": "image/png",
-        "size": 239208
-      },
-      "status": "verified",
-      "adminNotes": "Verified by admin",
-      "announcementId": "343c5084-6ac9-49ae-b518-34ec8488f298",
-      "announcementName": "A2 German Certificate ",
-      "announcementSource": "Moodle LMS - Admin User",
-      "createdAt": "2026-04-15T04:40:26.920Z",
-      "updatedAt": "2026-04-15T04:41:17.664Z",
-      "verifiedBy": 1,
-      "credentialId": "5e99edc1-b583-4388-a338-c25f3ba9ae49"
-    }
-  ],
+  "uploads": [],
   "credentials": [
     {
-      "id": "96f13417-6ad7-4b1b-929c-c3f4c425ed6d",
-      "claimId": "6b37441e-ba7d-416a-b42d-3daf543c515b",
-      "source": "claim",
-      "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "Moodle LMS - FH Dortmund",
-      "holderId": 4,
-      "achievementName": "German Language Certificate B1",
-      "achievementDescription": "B1 level German language proficiency certificate required for enrollment",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:96f13417-6ad7-4b1b-929c-c3f4c425ed6d\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"German Language Certificate B1\",\"description\":\"B1 level German language proficiency certificate required for enrollment\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle LMS - FH Dortmund\",\"description\":\"Moodle LMS - FH Dortmund - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-03T11:02:43.460Z\",\"validUntil\":\"2026-05-03T06:18:28.444Z\",\"credentialSubject\":{\"id\":\"urn:uuid:d5d776f6-3e9b-4770-94b7-65564fb71a54\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"shariful.cse01@gmail.com\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:f02381d0-555b-420b-9b6d-7136a88ea56d\",\"type\":[\"Achievement\"],\"achievementType\":\"OpenBadgeCredential\",\"name\":\"German Language Certificate B1\",\"description\":\"B1 level German language proficiency certificate required for enrollment\",\"criteria\":{\"narrative\":\"Pass B1 German language exam with 60% or higher\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle LMS - FH Dortmund\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"German Language Certificate B1\"}},\"awardedDate\":\"2026-04-03T11:02:43.460Z\"},\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
-      "status": "issued",
-      "shareApproved": true,
-      "issuedDate": "2026-04-03T11:02:43.460Z",
-      "createdAt": "2026-04-03T11:02:43.463Z"
-    },
-    {
-      "id": "a61579b7-51d0-4ecb-9684-9a98e6061127",
-      "uploadId": "92bf73aa-cae3-4f28-b485-19aced972325",
+      "id": "9c2e35c1-afdc-4d0f-a433-5347ac5adddf",
       "source": "upload",
       "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "FH Dortmund",
-      "holderId": 4,
-      "achievementName": "DSA",
-      "achievementDescription": "DSA",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:a61579b7-51d0-4ecb-9684-9a98e6061127\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"DSA\",\"description\":\"DSA\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"FH Dortmund\",\"description\":\"FH Dortmund - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-05T21:06:58.919Z\",\"validUntil\":\"2031-04-04T21:06:58.919Z\",\"credentialSubject\":{\"id\":\"urn:uuid:275ba7b0-0973-49d4-834a-ee8bbb7027ca\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"shariful.cse01@gmail.com\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:9e8009e9-e9e7-4056-ab54-a51055fb099e\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"DSA\",\"description\":\"DSA\",\"criteria\":{\"narrative\":\"Verified from uploaded certificate by admin\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"FH Dortmund\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"DSA\"}},\"awardedDate\":\"2026-04-05T21:06:58.919Z\"},\"evidence\":[{\"id\":\"urn:uuid:003108d8-eaca-426b-80d3-4df545914b2d\",\"type\":[\"Evidence\"],\"name\":\"zeugnis_isdsoftwareundsystemegmbh.pdf\",\"description\":\"Uploaded certificate file verified by admin. DSA\",\"genre\":\"UploadedDocument\",\"audience\":\"Administration\"}],\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
-      "status": "issued",
-      "shareApproved": true,
-      "issuedDate": "2026-04-05T21:06:58.919Z",
-      "createdAt": "2026-04-05T21:06:58.921Z"
-    },
-    {
-      "id": "c56aa2f2-d80f-4b62-9b33-8f5605f688b9",
-      "claimId": "280a89a2-29b3-44b6-b344-d99931361ba6",
-      "source": "claim",
-      "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "FH Dortmund Moodle",
-      "holderId": 5,
-      "achievementName": "German B1 Certificate",
-      "achievementDescription": "B1 German language proficiency",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:c56aa2f2-d80f-4b62-9b33-8f5605f688b9\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"German B1 Certificate\",\"description\":\"B1 German language proficiency\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"FH Dortmund Moodle\",\"description\":\"FH Dortmund Moodle - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-03T11:09:27.260Z\",\"validUntil\":\"2026-05-03T06:19:11.805Z\",\"credentialSubject\":{\"id\":\"urn:uuid:5f619792-22ef-46e2-a42c-6c36c8e6f625\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"sanjida@gmail.com\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:77e127bd-97e7-4d6b-95c4-85e899d9ce93\",\"type\":[\"Achievement\"],\"achievementType\":\"OpenBadgeCredential\",\"name\":\"German B1 Certificate\",\"description\":\"B1 German language proficiency\",\"criteria\":{\"narrative\":\"Pass B1 exam 60%+\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"FH Dortmund Moodle\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"German B1 Certificate\"}},\"awardedDate\":\"2026-04-03T11:09:27.260Z\"},\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
-      "status": "issued",
-      "shareApproved": true,
-      "issuedDate": "2026-04-03T11:09:27.260Z",
-      "createdAt": "2026-04-03T11:09:27.263Z"
-    },
-    {
-      "id": "f295a768-f352-4d35-bc1a-d9a4f247c2a7",
-      "uploadId": "daa61b15-5324-4794-b6cd-19f554b6488b",
-      "source": "upload",
-      "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "Moodle Platform",
-      "holderId": 6,
-      "achievementName": "Web Development Fundamentals",
-      "achievementDescription": "Completed Full-Stack Web Development course",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:f295a768-f352-4d35-bc1a-d9a4f247c2a7\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"Web Development Fundamentals\",\"description\":\"Completed Full-Stack Web Development course\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle Platform\",\"description\":\"Moodle Platform - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-03T17:03:33.240Z\",\"validUntil\":\"2031-04-02T17:03:33.240Z\",\"credentialSubject\":{\"id\":\"urn:uuid:edc11233-28e8-4649-b7e7-0bd6031349e2\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"prottoy@gmail.com\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:3ab46673-96ee-44e4-a4cb-e8e3086d61db\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"Web Development Fundamentals\",\"description\":\"Completed Full-Stack Web Development course\",\"criteria\":{\"narrative\":\"Pass all modules with 70%+\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle Platform\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"Web Development Fundamentals\"}},\"awardedDate\":\"2026-04-03T17:03:33.240Z\"},\"evidence\":[{\"id\":\"urn:uuid:1d10f9f1-5b8e-4dc8-8e50-5d938e9e69e7\",\"type\":[\"Evidence\"],\"name\":\"0406bcf2-ff47-432e-bb62-9ea63263f4c0.jpeg\",\"description\":\"Uploaded certificate file verified by admin. Completed Full-Stack Web Development course\",\"genre\":\"UploadedDocument\",\"audience\":\"Administration\"}],\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
-      "status": "issued",
-      "shareApproved": true,
-      "issuedDate": "2026-04-03T17:03:33.240Z",
-      "createdAt": "2026-04-03T17:03:33.242Z"
-    },
-    {
-      "id": "75b1a8a1-e520-4c68-b3b3-aa09c0c63fe4",
-      "uploadId": "f0a8b0f1-3bb7-4f28-a42b-766ee5070006",
-      "source": "upload",
-      "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "Moodle -LMS - Admin",
-      "holderId": 5,
-      "achievementName": "AWS Cloud Certificate",
-      "achievementDescription": "Submit your AWS Cloud Certificate to get join in cloud seminar",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:75b1a8a1-e520-4c68-b3b3-aa09c0c63fe4\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"AWS Cloud Certificate\",\"description\":\"Submit your AWS Cloud Certificate to get join in cloud seminar\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle -LMS - Admin\",\"description\":\"Moodle -LMS - Admin - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-08T12:08:36.954Z\",\"validUntil\":\"2031-04-07T12:08:36.954Z\",\"credentialSubject\":{\"id\":\"urn:uuid:353ff64d-38ce-4747-8d2d-257abf4a706c\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"sanjida@gmail.com\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:45305d50-789e-4340-9245-1056ba9b3f3c\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"AWS Cloud Certificate\",\"description\":\"Submit your AWS Cloud Certificate to get join in cloud seminar\",\"criteria\":{\"narrative\":\"Verified from uploaded certificate by admin\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle -LMS - Admin\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"AWS Cloud Certificate\"}},\"awardedDate\":\"2026-04-08T12:08:36.954Z\"},\"evidence\":[{\"id\":\"urn:uuid:b8792f05-4231-46e4-961b-bc353ba40d7b\",\"type\":[\"Evidence\"],\"name\":\"ffbf4496-2c81-462e-8ce8-2dddb4e91afc.jpeg\",\"description\":\"Uploaded certificate file verified by admin. Submit your AWS Cloud Certificate to get join in cloud seminar\",\"genre\":\"UploadedDocument\",\"audience\":\"Administration\"}],\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
-      "status": "issued",
-      "shareApproved": true,
-      "issuedDate": "2026-04-08T12:08:36.954Z",
-      "createdAt": "2026-04-08T12:08:36.955Z"
-    },
-    {
-      "id": "7f377981-9927-4eb2-9934-fdaadebbcb47",
-      "uploadId": "b746ef01-6d9d-474d-a3c9-016bc4ea3c9e",
-      "source": "upload",
-      "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "Moodle -LMS - Admin",
-      "holderId": 8,
-      "achievementName": "AWS Cloud Certificate",
-      "achievementDescription": "Submit your AWS Cloud Certificate to get join in cloud seminar",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:7f377981-9927-4eb2-9934-fdaadebbcb47\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"AWS Cloud Certificate\",\"description\":\"Submit your AWS Cloud Certificate to get join in cloud seminar\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle -LMS - Admin\",\"description\":\"Moodle -LMS - Admin - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-09T06:41:31.794Z\",\"validUntil\":\"2031-04-08T06:41:31.794Z\",\"credentialSubject\":{\"id\":\"urn:uuid:8eb64132-22bf-466d-a5a6-61152d258591\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"shariful@gmail.com\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:c0727642-01a0-464f-84b1-820c5fb9bd48\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"AWS Cloud Certificate\",\"description\":\"Submit your AWS Cloud Certificate to get join in cloud seminar\",\"criteria\":{\"narrative\":\"Verified from uploaded certificate by admin\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle -LMS - Admin\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"AWS Cloud Certificate\"}},\"awardedDate\":\"2026-04-09T06:41:31.794Z\"},\"evidence\":[{\"id\":\"urn:uuid:ba36946e-9a00-46cb-af93-d1a1a0f77cf3\",\"type\":[\"Evidence\"],\"name\":\"Moodle LMS and Wallet-2026-04-09-051926.png\",\"description\":\"Uploaded certificate file verified by admin. Submit your AWS Cloud Certificate to get join in cloud seminar\",\"genre\":\"UploadedDocument\",\"audience\":\"Administration\"}],\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
-      "status": "issued",
-      "shareApproved": true,
-      "issuedDate": "2026-04-09T06:41:31.794Z",
-      "createdAt": "2026-04-09T06:41:31.796Z"
-    },
-    {
-      "id": "edecf7f0-0add-4ae4-84c6-3704bf6cef9f",
-      "uploadId": "53b5fc45-e28e-455e-a681-e7280999bb02",
-      "source": "upload",
-      "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "Moodle -LMS- Admin",
-      "holderId": 9,
-      "achievementName": "German A2",
-      "achievementDescription": "please provide your German A2 Certificate for getting enrolled in TS2",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:edecf7f0-0add-4ae4-84c6-3704bf6cef9f\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"German A2\",\"description\":\"please provide your German A2 Certificate for getting enrolled in TS2\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle -LMS- Admin\",\"description\":\"Moodle -LMS- Admin - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-09T08:13:40.737Z\",\"validUntil\":\"2031-04-08T08:13:40.737Z\",\"credentialSubject\":{\"id\":\"urn:uuid:0206f634-ab2a-4380-a55a-73f6a2cb4647\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"sharif@gmail.com\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:9ba08525-123e-419b-a813-3d43e6629a95\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"German A2\",\"description\":\"please provide your German A2 Certificate for getting enrolled in TS2\",\"criteria\":{\"narrative\":\"Verified from uploaded certificate by admin\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle -LMS- Admin\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"German A2\"}},\"awardedDate\":\"2026-04-09T08:13:40.737Z\"},\"evidence\":[{\"id\":\"urn:uuid:c9157b40-79d7-4243-ac6c-e47631e136e0\",\"type\":[\"Evidence\"],\"name\":\"Moodle LMS and Wallet-2026-04-09-051746.png\",\"description\":\"Uploaded certificate file verified by admin. please provide your German A2 Certificate for getting enrolled in TS2\",\"genre\":\"UploadedDocument\",\"audience\":\"Administration\"}],\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
-      "status": "issued",
-      "shareApproved": true,
-      "issuedDate": "2026-04-09T08:13:40.737Z",
-      "createdAt": "2026-04-09T08:13:40.738Z"
-    },
-    {
-      "id": "d6774aaa-36f5-482f-bcd8-7f5cf7977c2d",
-      "uploadId": "2090f3f5-6dd2-4d9f-b0e4-270f727871f8",
-      "source": "upload",
-      "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "Moodle -LMS - Admin",
-      "holderId": 10,
-      "achievementName": "AWS Cloud Certificate",
-      "achievementDescription": "Submit your AWS Cloud Certificate to get join in cloud seminar",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:d6774aaa-36f5-482f-bcd8-7f5cf7977c2d\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"AWS Cloud Certificate\",\"description\":\"Submit your AWS Cloud Certificate to get join in cloud seminar\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle -LMS - Admin\",\"description\":\"Moodle -LMS - Admin - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-09T08:30:55.776Z\",\"validUntil\":\"2031-04-08T08:30:55.776Z\",\"credentialSubject\":{\"id\":\"urn:uuid:c447aa7f-1fe4-42f6-9bb9-f2b8f627c14d\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"mahdi@gmail.com\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:52d628e9-58ce-4e7f-a6d1-9a25fa329745\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"AWS Cloud Certificate\",\"description\":\"Submit your AWS Cloud Certificate to get join in cloud seminar\",\"criteria\":{\"narrative\":\"Verified from uploaded certificate by admin\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle -LMS - Admin\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"AWS Cloud Certificate\"}},\"awardedDate\":\"2026-04-09T08:30:55.776Z\"},\"evidence\":[{\"id\":\"urn:uuid:8d872fa4-cab5-46a9-b17f-d1dac6e4dff2\",\"type\":[\"Evidence\"],\"name\":\"Moodle LMS and Wallet-2026-04-09-051746.png\",\"description\":\"Uploaded certificate file verified by admin. Submit your AWS Cloud Certificate to get join in cloud seminar\",\"genre\":\"UploadedDocument\",\"audience\":\"Administration\"}],\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
-      "status": "issued",
-      "shareApproved": true,
-      "issuedDate": "2026-04-09T08:30:55.776Z",
-      "createdAt": "2026-04-09T08:30:55.777Z"
-    },
-    {
-      "id": "5e99edc1-b583-4388-a338-c25f3ba9ae49",
-      "uploadId": "03d275df-e7d9-4be4-b7f6-fcc4a1fe227e",
-      "source": "upload",
-      "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "Moodle LMS - Admin User",
-      "holderId": 4,
-      "achievementName": "A2 German Certificate ",
-      "achievementDescription": "For getting enroll TS2",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:5e99edc1-b583-4388-a338-c25f3ba9ae49\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"A2 German Certificate \",\"description\":\"For getting enroll TS2\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle LMS - Admin User\",\"description\":\"Moodle LMS - Admin User - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-15T04:41:17.664Z\",\"validUntil\":\"2031-04-14T04:41:17.664Z\",\"credentialSubject\":{\"id\":\"urn:uuid:549affa9-cc66-4daa-a1a8-f2fe4ae8d7b1\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"shariful.cse01@gmail.com\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:73982ef0-0ec9-4a2f-8ae8-8b79b3a604d8\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"A2 German Certificate \",\"description\":\"For getting enroll TS2\",\"criteria\":{\"narrative\":\"Verified from uploaded certificate by admin\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Moodle LMS - Admin User\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"A2 German Certificate \"}},\"awardedDate\":\"2026-04-15T04:41:17.664Z\"},\"evidence\":[{\"id\":\"urn:uuid:c547c4c2-b262-4daf-89a5-1db2446beda6\",\"type\":[\"Evidence\"],\"name\":\"Credential Issuance Flow-2026-04-12-053714.png\",\"description\":\"Uploaded certificate file verified by admin. For getting enroll TS2\",\"genre\":\"UploadedDocument\",\"audience\":\"Administration\"}],\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
-      "status": "issued",
-      "shareApproved": true,
-      "issuedDate": "2026-04-15T04:41:17.664Z",
-      "createdAt": "2026-04-15T04:41:17.666Z"
-    },
-    {
-      "id": "bb86fe7b-83e6-4ce2-850f-3416b83571a2",
-      "uploadId": "9fd0ceff-ef44-42bf-b549-b25a3c8fee76",
-      "source": "upload",
-      "type": "OpenBadgeCredential",
-      "issuerId": "did:web:academic-wallet.local",
-      "issuerName": "Verified Issuer",
+      "issuerId": "did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer",
+      "issuerName": "Academic Achievement Wallet",
       "holderId": 2,
-      "achievementName": "German Language Certificate B1",
-      "achievementDescription": "B1 level German language proficiency certificate required for enrollment",
-      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"urn:uuid:bb86fe7b-83e6-4ce2-850f-3416b83571a2\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"German Language Certificate B1\",\"description\":\"B1 level German language proficiency certificate required for enrollment\",\"issuer\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Verified Issuer\",\"description\":\"Verified Issuer - credential issuer\",\"url\":\"https://university.edu\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-04-29T07:33:52.978Z\",\"validUntil\":\"2031-04-28T07:33:52.979Z\",\"credentialSubject\":{\"id\":\"urn:uuid:47c0a5b0-8a2d-47ce-9d7a-897632b2862a\",\"type\":[\"AchievementSubject\"],\"identifier\":[{\"type\":\"IdentityObject\",\"identityHash\":\"student@university.edu\",\"identityType\":\"emailAddress\",\"hashed\":false,\"salt\":\"not-used\"}],\"achievement\":{\"id\":\"urn:uuid:767dc7c0-615e-476f-bb17-dfccacdbee56\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"German Language Certificate B1\",\"description\":\"B1 level German language proficiency certificate required for enrollment\",\"criteria\":{\"narrative\":\"Verified from uploaded certificate by admin\"},\"creator\":{\"id\":\"did:web:academic-wallet.local\",\"type\":[\"Profile\"],\"name\":\"Verified Issuer\",\"url\":\"https://university.edu\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"German Language Certificate B1\"}},\"awardedDate\":\"2026-04-29T07:33:52.978Z\"},\"evidence\":[{\"id\":\"urn:uuid:64aef69a-91d7-4874-bb1d-0d182c4ff0a4\",\"type\":[\"Evidence\"],\"name\":\"Acceptance Letter_Md Shariful Islam.pdf\",\"description\":\"Uploaded certificate file verified by admin. B1 level German language proficiency certificate required for enrollment\",\"genre\":\"UploadedDocument\",\"audience\":\"Administration\"}],\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}]}",
+      "achievementName": "Block Week — Robotics",
+      "achievementDescription": "Awarded for completing the intensive block-week course in Robotics.",
+      "vc": {
+        "@context": [
+          "https://www.w3.org/ns/credentials/v2",
+          "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+        ],
+        "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/credentials/9c2e35c1-afdc-4d0f-a433-5347ac5adddf",
+        "type": [
+          "VerifiableCredential",
+          "OpenBadgeCredential"
+        ],
+        "name": "Block Week — Robotics",
+        "description": "Awarded for completing the intensive block-week course in Robotics.",
+        "issuer": {
+          "id": "did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer",
+          "type": [
+            "Profile"
+          ],
+          "name": "Academic Achievement Wallet",
+          "url": "https://nine-vessel-intermediate-cameron.trycloudflare.com"
+        },
+        "validFrom": "2026-06-24T00:16:18.601Z",
+        "validUntil": "2031-06-23T00:16:18.601Z",
+        "credentialSubject": {
+          "id": "mailto:student@university.edu",
+          "type": [
+            "AchievementSubject"
+          ],
+          "achievement": {
+            "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/achievements/9c2e35c1-afdc-4d0f-a433-5347ac5adddf",
+            "type": [
+              "Achievement"
+            ],
+            "achievementType": "Certificate",
+            "name": "Block Week — Robotics",
+            "description": "Awarded for completing the intensive block-week course in Robotics.",
+            "criteria": {
+              "narrative": "Attended all sessions and passed the final project assessment."
+            },
+            "alignment": [
+              {
+                "targetName": "Robotics Fundamentals",
+                "targetFramework": "DEE Curriculum",
+                "targetCode": "ROB-101",
+                "targetType": "CFItem",
+                "targetUrl": "https://nine-vessel-intermediate-cameron.trycloudflare.com/framework/ROB-101"
+              }
+            ],
+            "tag": [
+              "block-week",
+              "robotics",
+              "engineering"
+            ]
+          },
+          "identifier": [
+            {
+              "type": "IdentityObject",
+              "identityType": "emailAddress",
+              "hashed": true,
+              "salt": "df01c32dd1df43829086388d8739a702",
+              "identityHash": "sha256$a55157efa6e2cda9312613f916340729b0badbd750228f10a907b539411d6d61"
+            }
+          ],
+          "name": "Max Mustermann"
+        },
+        "credentialSchema": [
+          {
+            "id": "https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json",
+            "type": "1EdTechJsonSchemaValidator2019"
+          }
+        ],
+        "credentialStatus": {
+          "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1#0",
+          "type": "BitstringStatusListEntry",
+          "statusPurpose": "revocation",
+          "statusListIndex": "0",
+          "statusListCredential": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1"
+        }
+      },
+      "jwt": "eyJhbGciOiJFUzI1NiIsInR5cCI6InZjK2p3dCIsImtpZCI6ImRpZDp3ZWI6bmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb206YXBpOmJhZGdlczppc3N1ZXIjaXNzdWVyLWtleS0xIiwiY3R5IjoidmMifQ.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvbnMvY3JlZGVudGlhbHMvdjIiLCJodHRwczovL3B1cmwuaW1zZ2xvYmFsLm9yZy9zcGVjL29iL3YzcDAvY29udGV4dC0zLjAuMy5qc29uIl0sImlkIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9hcGkvYmFkZ2VzL2NyZWRlbnRpYWxzLzljMmUzNWMxLWFmZGMtNGQwZi1hNDMzLTUzNDdhYzVhZGRkZiIsInR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiLCJPcGVuQmFkZ2VDcmVkZW50aWFsIl0sIm5hbWUiOiJCbG9jayBXZWVrIOKAlCBSb2JvdGljcyIsImRlc2NyaXB0aW9uIjoiQXdhcmRlZCBmb3IgY29tcGxldGluZyB0aGUgaW50ZW5zaXZlIGJsb2NrLXdlZWsgY291cnNlIGluIFJvYm90aWNzLiIsImlzc3VlciI6eyJpZCI6ImRpZDp3ZWI6bmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb206YXBpOmJhZGdlczppc3N1ZXIiLCJ0eXBlIjpbIlByb2ZpbGUiXSwibmFtZSI6IkFjYWRlbWljIEFjaGlldmVtZW50IFdhbGxldCIsInVybCI6Imh0dHBzOi8vbmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb20ifSwidmFsaWRGcm9tIjoiMjAyNi0wNi0yNFQwMDoxNjoxOC42MDFaIiwidmFsaWRVbnRpbCI6IjIwMzEtMDYtMjNUMDA6MTY6MTguNjAxWiIsImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImlkIjoibWFpbHRvOnN0dWRlbnRAdW5pdmVyc2l0eS5lZHUiLCJ0eXBlIjpbIkFjaGlldmVtZW50U3ViamVjdCJdLCJhY2hpZXZlbWVudCI6eyJpZCI6Imh0dHBzOi8vbmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb20vYXBpL2JhZGdlcy9hY2hpZXZlbWVudHMvOWMyZTM1YzEtYWZkYy00ZDBmLWE0MzMtNTM0N2FjNWFkZGRmIiwidHlwZSI6WyJBY2hpZXZlbWVudCJdLCJhY2hpZXZlbWVudFR5cGUiOiJDZXJ0aWZpY2F0ZSIsIm5hbWUiOiJCbG9jayBXZWVrIOKAlCBSb2JvdGljcyIsImRlc2NyaXB0aW9uIjoiQXdhcmRlZCBmb3IgY29tcGxldGluZyB0aGUgaW50ZW5zaXZlIGJsb2NrLXdlZWsgY291cnNlIGluIFJvYm90aWNzLiIsImNyaXRlcmlhIjp7Im5hcnJhdGl2ZSI6IkF0dGVuZGVkIGFsbCBzZXNzaW9ucyBhbmQgcGFzc2VkIHRoZSBmaW5hbCBwcm9qZWN0IGFzc2Vzc21lbnQuIn0sImFsaWdubWVudCI6W3sidGFyZ2V0TmFtZSI6IlJvYm90aWNzIEZ1bmRhbWVudGFscyIsInRhcmdldEZyYW1ld29yayI6IkRFRSBDdXJyaWN1bHVtIiwidGFyZ2V0Q29kZSI6IlJPQi0xMDEiLCJ0YXJnZXRUeXBlIjoiQ0ZJdGVtIiwidGFyZ2V0VXJsIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9mcmFtZXdvcmsvUk9CLTEwMSJ9XSwidGFnIjpbImJsb2NrLXdlZWsiLCJyb2JvdGljcyIsImVuZ2luZWVyaW5nIl19LCJpZGVudGlmaWVyIjpbeyJ0eXBlIjoiSWRlbnRpdHlPYmplY3QiLCJpZGVudGl0eVR5cGUiOiJlbWFpbEFkZHJlc3MiLCJoYXNoZWQiOnRydWUsInNhbHQiOiJkZjAxYzMyZGQxZGY0MzgyOTA4NjM4OGQ4NzM5YTcwMiIsImlkZW50aXR5SGFzaCI6InNoYTI1NiRhNTUxNTdlZmE2ZTJjZGE5MzEyNjEzZjkxNjM0MDcyOWIwYmFkYmQ3NTAyMjhmMTBhOTA3YjUzOTQxMWQ2ZDYxIn1dLCJuYW1lIjoiTWF4IE11c3Rlcm1hbm4ifSwiY3JlZGVudGlhbFNjaGVtYSI6W3siaWQiOiJodHRwczovL3B1cmwuaW1zZ2xvYmFsLm9yZy9zcGVjL29iL3YzcDAvc2NoZW1hL2pzb24vb2JfdjNwMF9hY2hpZXZlbWVudGNyZWRlbnRpYWxfc2NoZW1hLmpzb24iLCJ0eXBlIjoiMUVkVGVjaEpzb25TY2hlbWFWYWxpZGF0b3IyMDE5In1dLCJjcmVkZW50aWFsU3RhdHVzIjp7ImlkIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9hcGkvYmFkZ2VzL3N0YXR1cy9saXN0LTEjMCIsInR5cGUiOiJCaXRzdHJpbmdTdGF0dXNMaXN0RW50cnkiLCJzdGF0dXNQdXJwb3NlIjoicmV2b2NhdGlvbiIsInN0YXR1c0xpc3RJbmRleCI6IjAiLCJzdGF0dXNMaXN0Q3JlZGVudGlhbCI6Imh0dHBzOi8vbmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb20vYXBpL2JhZGdlcy9zdGF0dXMvbGlzdC0xIn19LCJpc3MiOiJkaWQ6d2ViOm5pbmUtdmVzc2VsLWludGVybWVkaWF0ZS1jYW1lcm9uLnRyeWNsb3VkZmxhcmUuY29tOmFwaTpiYWRnZXM6aXNzdWVyIiwiaWF0IjoxNzgyMjYwMTc4LCJuYmYiOjE3ODIyNjAxNzgsImp0aSI6Imh0dHBzOi8vbmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb20vYXBpL2JhZGdlcy9jcmVkZW50aWFscy85YzJlMzVjMS1hZmRjLTRkMGYtYTQzMy01MzQ3YWM1YWRkZGYiLCJzdWIiOiJtYWlsdG86c3R1ZGVudEB1bml2ZXJzaXR5LmVkdSIsImV4cCI6MTkzOTk0MDE3OH0.9TN2EEF2QF-zQ4jabYYnNb8QdhxjWx1ocWSusjX8zu2B6RFbvN7tcBXbY0PXW4jpa-PEzhq7WW3Yba7CsJfjhg",
+      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/credentials/9c2e35c1-afdc-4d0f-a433-5347ac5adddf\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"Block Week — Robotics\",\"description\":\"Awarded for completing the intensive block-week course in Robotics.\",\"issuer\":{\"id\":\"did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer\",\"type\":[\"Profile\"],\"name\":\"Academic Achievement Wallet\",\"url\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com\"},\"validFrom\":\"2026-06-24T00:16:18.601Z\",\"validUntil\":\"2031-06-23T00:16:18.601Z\",\"credentialSubject\":{\"id\":\"mailto:student@university.edu\",\"type\":[\"AchievementSubject\"],\"achievement\":{\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/achievements/9c2e35c1-afdc-4d0f-a433-5347ac5adddf\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"Block Week — Robotics\",\"description\":\"Awarded for completing the intensive block-week course in Robotics.\",\"criteria\":{\"narrative\":\"Attended all sessions and passed the final project assessment.\"},\"alignment\":[{\"targetName\":\"Robotics Fundamentals\",\"targetFramework\":\"DEE Curriculum\",\"targetCode\":\"ROB-101\",\"targetType\":\"CFItem\",\"targetUrl\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/framework/ROB-101\"}],\"tag\":[\"block-week\",\"robotics\",\"engineering\"]},\"identifier\":[{\"type\":\"IdentityObject\",\"identityType\":\"emailAddress\",\"hashed\":true,\"salt\":\"df01c32dd1df43829086388d8739a702\",\"identityHash\":\"sha256$a55157efa6e2cda9312613f916340729b0badbd750228f10a907b539411d6d61\"}],\"name\":\"Max Mustermann\"},\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}],\"credentialStatus\":{\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1#0\",\"type\":\"BitstringStatusListEntry\",\"statusPurpose\":\"revocation\",\"statusListIndex\":\"0\",\"statusListCredential\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1\"}}",
+      "statusListId": "list-1",
+      "statusListIndex": 0,
+      "identitySalt": "df01c32dd1df43829086388d8739a702",
       "status": "issued",
       "shareApproved": true,
-      "issuedDate": "2026-04-29T07:33:52.978Z",
-      "createdAt": "2026-04-29T07:33:52.981Z"
+      "issuedDate": "2026-06-24T00:16:18.603Z",
+      "createdAt": "2026-06-24T00:16:18.603Z"
+    },
+    {
+      "id": "f2561a59-0fd2-4cf9-8f62-51c62822239f",
+      "source": "upload",
+      "type": "OpenBadgeCredential",
+      "issuerId": "did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer",
+      "issuerName": "Academic Achievement Wallet",
+      "holderId": 2,
+      "achievementName": "German Language Certificate B2",
+      "achievementDescription": "Awarded for achieving CEFR level B2 proficiency in the German language.",
+      "vc": {
+        "@context": [
+          "https://www.w3.org/ns/credentials/v2",
+          "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+        ],
+        "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/credentials/f2561a59-0fd2-4cf9-8f62-51c62822239f",
+        "type": [
+          "VerifiableCredential",
+          "OpenBadgeCredential"
+        ],
+        "name": "German Language Certificate B2",
+        "description": "Awarded for achieving CEFR level B2 proficiency in the German language.",
+        "issuer": {
+          "id": "did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer",
+          "type": [
+            "Profile"
+          ],
+          "name": "Academic Achievement Wallet",
+          "url": "https://nine-vessel-intermediate-cameron.trycloudflare.com"
+        },
+        "validFrom": "2026-06-24T00:16:18.604Z",
+        "validUntil": "2031-06-23T00:16:18.604Z",
+        "credentialSubject": {
+          "id": "mailto:student@university.edu",
+          "type": [
+            "AchievementSubject"
+          ],
+          "achievement": {
+            "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/achievements/f2561a59-0fd2-4cf9-8f62-51c62822239f",
+            "type": [
+              "Achievement"
+            ],
+            "achievementType": "Certificate",
+            "name": "German Language Certificate B2",
+            "description": "Awarded for achieving CEFR level B2 proficiency in the German language.",
+            "criteria": {
+              "narrative": "Passed the B2 examination across reading, writing, listening and speaking."
+            },
+            "alignment": [
+              {
+                "targetName": "CEFR B2",
+                "targetFramework": "CEFR",
+                "targetCode": "B2",
+                "targetType": "CFItem",
+                "targetUrl": "https://www.coe.int/cefr"
+              }
+            ],
+            "tag": [
+              "language",
+              "german",
+              "B2"
+            ]
+          },
+          "identifier": [
+            {
+              "type": "IdentityObject",
+              "identityType": "emailAddress",
+              "hashed": true,
+              "salt": "6d0cab4f81bb17fceb50af9334bc3923",
+              "identityHash": "sha256$7ce9d67e2d4838ed4e69941e99e9f7691c3f87c88a9366cd622d493bb5634413"
+            }
+          ],
+          "name": "Max Mustermann"
+        },
+        "credentialSchema": [
+          {
+            "id": "https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json",
+            "type": "1EdTechJsonSchemaValidator2019"
+          }
+        ],
+        "credentialStatus": {
+          "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1#1",
+          "type": "BitstringStatusListEntry",
+          "statusPurpose": "revocation",
+          "statusListIndex": "1",
+          "statusListCredential": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1"
+        }
+      },
+      "jwt": "eyJhbGciOiJFUzI1NiIsInR5cCI6InZjK2p3dCIsImtpZCI6ImRpZDp3ZWI6bmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb206YXBpOmJhZGdlczppc3N1ZXIjaXNzdWVyLWtleS0xIiwiY3R5IjoidmMifQ.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvbnMvY3JlZGVudGlhbHMvdjIiLCJodHRwczovL3B1cmwuaW1zZ2xvYmFsLm9yZy9zcGVjL29iL3YzcDAvY29udGV4dC0zLjAuMy5qc29uIl0sImlkIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9hcGkvYmFkZ2VzL2NyZWRlbnRpYWxzL2YyNTYxYTU5LTBmZDItNGNmOS04ZjYyLTUxYzYyODIyMjM5ZiIsInR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiLCJPcGVuQmFkZ2VDcmVkZW50aWFsIl0sIm5hbWUiOiJHZXJtYW4gTGFuZ3VhZ2UgQ2VydGlmaWNhdGUgQjIiLCJkZXNjcmlwdGlvbiI6IkF3YXJkZWQgZm9yIGFjaGlldmluZyBDRUZSIGxldmVsIEIyIHByb2ZpY2llbmN5IGluIHRoZSBHZXJtYW4gbGFuZ3VhZ2UuIiwiaXNzdWVyIjp7ImlkIjoiZGlkOndlYjpuaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbTphcGk6YmFkZ2VzOmlzc3VlciIsInR5cGUiOlsiUHJvZmlsZSJdLCJuYW1lIjoiQWNhZGVtaWMgQWNoaWV2ZW1lbnQgV2FsbGV0IiwidXJsIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbSJ9LCJ2YWxpZEZyb20iOiIyMDI2LTA2LTI0VDAwOjE2OjE4LjYwNFoiLCJ2YWxpZFVudGlsIjoiMjAzMS0wNi0yM1QwMDoxNjoxOC42MDRaIiwiY3JlZGVudGlhbFN1YmplY3QiOnsiaWQiOiJtYWlsdG86c3R1ZGVudEB1bml2ZXJzaXR5LmVkdSIsInR5cGUiOlsiQWNoaWV2ZW1lbnRTdWJqZWN0Il0sImFjaGlldmVtZW50Ijp7ImlkIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9hcGkvYmFkZ2VzL2FjaGlldmVtZW50cy9mMjU2MWE1OS0wZmQyLTRjZjktOGY2Mi01MWM2MjgyMjIzOWYiLCJ0eXBlIjpbIkFjaGlldmVtZW50Il0sImFjaGlldmVtZW50VHlwZSI6IkNlcnRpZmljYXRlIiwibmFtZSI6Ikdlcm1hbiBMYW5ndWFnZSBDZXJ0aWZpY2F0ZSBCMiIsImRlc2NyaXB0aW9uIjoiQXdhcmRlZCBmb3IgYWNoaWV2aW5nIENFRlIgbGV2ZWwgQjIgcHJvZmljaWVuY3kgaW4gdGhlIEdlcm1hbiBsYW5ndWFnZS4iLCJjcml0ZXJpYSI6eyJuYXJyYXRpdmUiOiJQYXNzZWQgdGhlIEIyIGV4YW1pbmF0aW9uIGFjcm9zcyByZWFkaW5nLCB3cml0aW5nLCBsaXN0ZW5pbmcgYW5kIHNwZWFraW5nLiJ9LCJhbGlnbm1lbnQiOlt7InRhcmdldE5hbWUiOiJDRUZSIEIyIiwidGFyZ2V0RnJhbWV3b3JrIjoiQ0VGUiIsInRhcmdldENvZGUiOiJCMiIsInRhcmdldFR5cGUiOiJDRkl0ZW0iLCJ0YXJnZXRVcmwiOiJodHRwczovL3d3dy5jb2UuaW50L2NlZnIifV0sInRhZyI6WyJsYW5ndWFnZSIsImdlcm1hbiIsIkIyIl19LCJpZGVudGlmaWVyIjpbeyJ0eXBlIjoiSWRlbnRpdHlPYmplY3QiLCJpZGVudGl0eVR5cGUiOiJlbWFpbEFkZHJlc3MiLCJoYXNoZWQiOnRydWUsInNhbHQiOiI2ZDBjYWI0ZjgxYmIxN2ZjZWI1MGFmOTMzNGJjMzkyMyIsImlkZW50aXR5SGFzaCI6InNoYTI1NiQ3Y2U5ZDY3ZTJkNDgzOGVkNGU2OTk0MWU5OWU5Zjc2OTFjM2Y4N2M4OGE5MzY2Y2Q2MjJkNDkzYmI1NjM0NDEzIn1dLCJuYW1lIjoiTWF4IE11c3Rlcm1hbm4ifSwiY3JlZGVudGlhbFNjaGVtYSI6W3siaWQiOiJodHRwczovL3B1cmwuaW1zZ2xvYmFsLm9yZy9zcGVjL29iL3YzcDAvc2NoZW1hL2pzb24vb2JfdjNwMF9hY2hpZXZlbWVudGNyZWRlbnRpYWxfc2NoZW1hLmpzb24iLCJ0eXBlIjoiMUVkVGVjaEpzb25TY2hlbWFWYWxpZGF0b3IyMDE5In1dLCJjcmVkZW50aWFsU3RhdHVzIjp7ImlkIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9hcGkvYmFkZ2VzL3N0YXR1cy9saXN0LTEjMSIsInR5cGUiOiJCaXRzdHJpbmdTdGF0dXNMaXN0RW50cnkiLCJzdGF0dXNQdXJwb3NlIjoicmV2b2NhdGlvbiIsInN0YXR1c0xpc3RJbmRleCI6IjEiLCJzdGF0dXNMaXN0Q3JlZGVudGlhbCI6Imh0dHBzOi8vbmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb20vYXBpL2JhZGdlcy9zdGF0dXMvbGlzdC0xIn19LCJpc3MiOiJkaWQ6d2ViOm5pbmUtdmVzc2VsLWludGVybWVkaWF0ZS1jYW1lcm9uLnRyeWNsb3VkZmxhcmUuY29tOmFwaTpiYWRnZXM6aXNzdWVyIiwiaWF0IjoxNzgyMjYwMTc4LCJuYmYiOjE3ODIyNjAxNzgsImp0aSI6Imh0dHBzOi8vbmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb20vYXBpL2JhZGdlcy9jcmVkZW50aWFscy9mMjU2MWE1OS0wZmQyLTRjZjktOGY2Mi01MWM2MjgyMjIzOWYiLCJzdWIiOiJtYWlsdG86c3R1ZGVudEB1bml2ZXJzaXR5LmVkdSIsImV4cCI6MTkzOTk0MDE3OH0.TJb-GQ344o1NBJP6V7IC50tLsgYmm6CY5QlLQQsvum8PkY04-jePKK3oOodbO-ByOj4RdpRUZWj0bkRLFDxYdw",
+      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/credentials/f2561a59-0fd2-4cf9-8f62-51c62822239f\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"German Language Certificate B2\",\"description\":\"Awarded for achieving CEFR level B2 proficiency in the German language.\",\"issuer\":{\"id\":\"did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer\",\"type\":[\"Profile\"],\"name\":\"Academic Achievement Wallet\",\"url\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com\"},\"validFrom\":\"2026-06-24T00:16:18.604Z\",\"validUntil\":\"2031-06-23T00:16:18.604Z\",\"credentialSubject\":{\"id\":\"mailto:student@university.edu\",\"type\":[\"AchievementSubject\"],\"achievement\":{\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/achievements/f2561a59-0fd2-4cf9-8f62-51c62822239f\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"German Language Certificate B2\",\"description\":\"Awarded for achieving CEFR level B2 proficiency in the German language.\",\"criteria\":{\"narrative\":\"Passed the B2 examination across reading, writing, listening and speaking.\"},\"alignment\":[{\"targetName\":\"CEFR B2\",\"targetFramework\":\"CEFR\",\"targetCode\":\"B2\",\"targetType\":\"CFItem\",\"targetUrl\":\"https://www.coe.int/cefr\"}],\"tag\":[\"language\",\"german\",\"B2\"]},\"identifier\":[{\"type\":\"IdentityObject\",\"identityType\":\"emailAddress\",\"hashed\":true,\"salt\":\"6d0cab4f81bb17fceb50af9334bc3923\",\"identityHash\":\"sha256$7ce9d67e2d4838ed4e69941e99e9f7691c3f87c88a9366cd622d493bb5634413\"}],\"name\":\"Max Mustermann\"},\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}],\"credentialStatus\":{\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1#1\",\"type\":\"BitstringStatusListEntry\",\"statusPurpose\":\"revocation\",\"statusListIndex\":\"1\",\"statusListCredential\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1\"}}",
+      "statusListId": "list-1",
+      "statusListIndex": 1,
+      "identitySalt": "6d0cab4f81bb17fceb50af9334bc3923",
+      "status": "issued",
+      "shareApproved": true,
+      "issuedDate": "2026-06-24T00:16:18.605Z",
+      "createdAt": "2026-06-24T00:16:18.605Z"
     }
   ],
-  "shares": [
-    {
-      "id": "7a0c17db-c0ae-4412-a998-475ead55ce83",
-      "credentialId": "fa99b57f-823d-4f01-9135-40a1f0b4653b",
-      "token": "95c38341-3bd1-4b05-9ad4-13390baa07d9",
-      "expiresAt": "2026-05-03T16:08:32.167Z",
-      "createdAt": "2026-04-03T16:08:32.167Z",
-      "viewCount": 13
-    },
-    {
-      "id": "83e87a76-04e0-46e5-95ef-d169f171f803",
-      "credentialId": "fa99b57f-823d-4f01-9135-40a1f0b4653b",
-      "token": "2994d17c-3892-4c93-878b-105721805445",
-      "expiresAt": "2026-05-03T16:43:44.859Z",
-      "createdAt": "2026-04-03T16:43:44.859Z",
-      "viewCount": 0
-    },
-    {
-      "id": "21e84bfa-1811-472a-a144-ef6318751e20",
-      "credentialId": "d43e4788-f3bc-41b3-9fbf-7e101d31cd84",
-      "token": "14febe9f-e3c0-47c4-bbb0-8d0749835cb5",
-      "expiresAt": "2026-05-03T17:05:56.391Z",
-      "createdAt": "2026-04-03T17:05:56.391Z",
-      "viewCount": 1
-    },
-    {
-      "id": "ad1d7ba4-564f-4ea5-9f74-015e7e330ef1",
-      "credentialId": "edecf7f0-0add-4ae4-84c6-3704bf6cef9f",
-      "token": "ce97af3d-3317-439f-b8ab-76d1451b7822",
-      "expiresAt": "2026-05-09T08:18:02.401Z",
-      "createdAt": "2026-04-09T08:18:02.401Z",
-      "viewCount": 1
-    },
-    {
-      "id": "57ea6a04-e614-42c8-a6e2-9fa042b5d279",
-      "credentialId": "d6774aaa-36f5-482f-bcd8-7f5cf7977c2d",
-      "token": "264eb01e-f316-4021-86a5-a01cbac1b9f1",
-      "expiresAt": "2026-05-09T08:35:33.295Z",
-      "createdAt": "2026-04-09T08:35:33.295Z",
-      "viewCount": 2
-    },
-    {
-      "id": "3e7a0cde-47a1-40be-a331-2fb530f92635",
-      "credentialId": "d6774aaa-36f5-482f-bcd8-7f5cf7977c2d",
-      "token": "69689ac4-5970-4e54-bb2e-749365c90706",
-      "expiresAt": "2026-05-09T08:35:33.357Z",
-      "createdAt": "2026-04-09T08:35:33.357Z",
-      "viewCount": 0
-    }
-  ],
+  "shares": [],
   "auditLog": [
     {
       "userId": 2,
       "action": "login",
       "detail": "student@university.edu logged in",
-      "createdAt": "2026-04-09T06:35:26.583Z"
+      "createdAt": "2026-06-24T00:16:24.210Z"
     },
     {
       "userId": 2,
       "action": "login",
       "detail": "student@university.edu logged in",
-      "createdAt": "2026-04-09T06:37:25.738Z"
+      "createdAt": "2026-06-24T00:17:49.175Z"
     },
     {
       "userId": 2,
       "action": "login",
       "detail": "student@university.edu logged in",
-      "createdAt": "2026-04-09T06:38:46.013Z"
-    },
-    {
-      "userId": 8,
-      "action": "register",
-      "detail": "shariful@gmail.com registered as student",
-      "createdAt": "2026-04-09T06:39:19.201Z"
-    },
-    {
-      "userId": 8,
-      "action": "upload_created",
-      "detail": "shariful@gmail.com uploaded \"AWS Cloud Certificate\" in response to \"AWS Cloud Certificate\" for verification",
-      "createdAt": "2026-04-09T06:39:59.017Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-04-09T06:40:35.160Z"
-    },
-    {
-      "userId": 1,
-      "action": "upload_verified",
-      "detail": "Admin verified upload \"AWS Cloud Certificate\" for shariful@gmail.com → OB 3.0 credential issued",
-      "createdAt": "2026-04-09T06:41:31.797Z"
-    },
-    {
-      "userId": 8,
-      "action": "login",
-      "detail": "shariful@gmail.com logged in",
-      "createdAt": "2026-04-09T06:41:46.969Z"
-    },
-    {
-      "action": "access_requested",
-      "detail": "Moodle LMS requested access to shariful@gmail.com's credentials (type: AWS Cloud Certificate)",
-      "createdAt": "2026-04-09T06:43:56.499Z"
-    },
-    {
-      "userId": 8,
-      "action": "access_granted",
-      "detail": "Student approved access for Moodle LMS (request: 6126246e-0367-4428-b90c-6f91f0e08607)",
-      "createdAt": "2026-04-09T06:44:31.724Z"
-    },
-    {
-      "action": "announcement_created",
-      "detail": "moodle announced \"German A2\" – all students notified",
-      "createdAt": "2026-04-09T06:46:35.357Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-04-09T06:59:18.996Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-04-09T06:59:27.284Z"
-    },
-    {
-      "userId": 1,
-      "action": "user_deleted",
-      "detail": "Deleted user 8",
-      "createdAt": "2026-04-09T06:59:52.475Z"
-    },
-    {
-      "userId": 9,
-      "action": "register",
-      "detail": "sharif@gmail.com registered as student",
-      "createdAt": "2026-04-09T08:10:39.811Z"
-    },
-    {
-      "userId": 9,
-      "action": "upload_created",
-      "detail": "sharif@gmail.com uploaded \"German A2\" in response to \"German A2\" for verification",
-      "createdAt": "2026-04-09T08:12:06.341Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-04-09T08:13:01.929Z"
-    },
-    {
-      "userId": 1,
-      "action": "upload_verified",
-      "detail": "Admin verified upload \"German A2\" for sharif@gmail.com → OB 3.0 credential issued",
-      "createdAt": "2026-04-09T08:13:40.739Z"
-    },
-    {
-      "userId": 9,
-      "action": "login",
-      "detail": "sharif@gmail.com logged in",
-      "createdAt": "2026-04-09T08:14:53.451Z"
-    },
-    {
-      "action": "access_requested",
-      "detail": "Moodle LMS requested access to sharif@gmail.com's credentials (type: German A2)",
-      "createdAt": "2026-04-09T08:15:47.472Z"
-    },
-    {
-      "userId": 9,
-      "action": "access_granted",
-      "detail": "Student approved access for Moodle LMS (request: 1c50c11b-bd29-486c-bbae-f55c36398afd)",
-      "createdAt": "2026-04-09T08:16:06.072Z"
-    },
-    {
-      "action": "access_requested",
-      "detail": "Moodle LMS requested access to sharif@gmail.com's credentials (type: German A2)",
-      "createdAt": "2026-04-09T08:16:15.356Z"
-    },
-    {
-      "action": "announcement_created",
-      "detail": "moodle announced \"Java Advance certificate\" – all students notified",
-      "createdAt": "2026-04-09T08:17:20.090Z"
-    },
-    {
-      "userId": 9,
-      "action": "credential_shared",
-      "detail": "Shared credential \"German A2\"",
-      "createdAt": "2026-04-09T08:18:02.402Z"
-    },
-    {
-      "userId": 10,
-      "action": "register",
-      "detail": "mahdi@gmail.com registered as student",
-      "createdAt": "2026-04-09T08:29:12.878Z"
-    },
-    {
-      "userId": 10,
-      "action": "upload_created",
-      "detail": "mahdi@gmail.com uploaded \"AWS Cloud Certificate\" in response to \"AWS Cloud Certificate\" for verification",
-      "createdAt": "2026-04-09T08:30:07.655Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-04-09T08:30:28.425Z"
-    },
-    {
-      "userId": 1,
-      "action": "upload_verified",
-      "detail": "Admin verified upload \"AWS Cloud Certificate\" for mahdi@gmail.com → OB 3.0 credential issued",
-      "createdAt": "2026-04-09T08:30:55.778Z"
-    },
-    {
-      "userId": 10,
-      "action": "login",
-      "detail": "mahdi@gmail.com logged in",
-      "createdAt": "2026-04-09T08:31:52.787Z"
-    },
-    {
-      "action": "access_requested",
-      "detail": "Moodle LMS requested access to mahdi@gmail.com's credentials (type: AWS Cloud Certificate)",
-      "createdAt": "2026-04-09T08:33:01.465Z"
-    },
-    {
-      "userId": 10,
-      "action": "access_granted",
-      "detail": "Student approved access for Moodle LMS (request: 67cec691-d85b-4ce5-9d38-a52df2601db9)",
-      "createdAt": "2026-04-09T08:33:43.327Z"
-    },
-    {
-      "action": "announcement_created",
-      "detail": "moodle announced \"German B2\" – all students notified",
-      "createdAt": "2026-04-09T08:34:49.543Z"
-    },
-    {
-      "userId": 10,
-      "action": "credential_shared",
-      "detail": "Shared credential \"AWS Cloud Certificate\"",
-      "createdAt": "2026-04-09T08:35:33.296Z"
-    },
-    {
-      "userId": 10,
-      "action": "credential_shared",
-      "detail": "Shared credential \"AWS Cloud Certificate\"",
-      "createdAt": "2026-04-09T08:35:33.358Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-04-11T06:25:43.123Z"
-    },
-    {
-      "userId": 4,
-      "action": "login",
-      "detail": "shariful.cse01@gmail.com logged in",
-      "createdAt": "2026-04-11T06:38:37.281Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-04-11T06:40:38.027Z"
-    },
-    {
-      "action": "access_requested",
-      "detail": "Moodle LMS requested access to shariful.cse01@gmail.com's credentials (type: German Language Certificate B1)",
-      "createdAt": "2026-04-11T06:45:12.358Z"
-    },
-    {
-      "userId": 4,
-      "action": "login",
-      "detail": "shariful.cse01@gmail.com logged in",
-      "createdAt": "2026-04-11T06:46:55.219Z"
-    },
-    {
-      "userId": 4,
-      "action": "access_granted",
-      "detail": "Student approved access for Moodle LMS (request: c12335e8-0282-4479-a50f-eb384ff7652b)",
-      "createdAt": "2026-04-11T06:50:08.543Z"
-    },
-    {
-      "userId": 4,
-      "action": "login",
-      "detail": "shariful.cse01@gmail.com logged in",
-      "createdAt": "2026-04-14T11:38:23.080Z"
-    },
-    {
-      "action": "access_requested",
-      "detail": "Moodle LMS requested access to shariful.cse01@gmail.com's credentials (type: German Language Certificate B1)",
-      "createdAt": "2026-04-15T04:34:58.818Z"
-    },
-    {
-      "userId": 4,
-      "action": "access_granted",
-      "detail": "Student approved access for Moodle LMS (request: 8e88d73c-af08-4f6e-a2ee-753a3a316b55)",
-      "createdAt": "2026-04-15T04:35:34.462Z"
-    },
-    {
-      "userId": 4,
-      "action": "access_revoked",
-      "detail": "Student revoked access for Moodle LMS (request: 8e88d73c-af08-4f6e-a2ee-753a3a316b55)",
-      "createdAt": "2026-04-15T04:36:48.953Z"
-    },
-    {
-      "action": "announcement_created",
-      "detail": "moodle announced \"A2 German Certificate \" – all students notified",
-      "createdAt": "2026-04-15T04:39:46.751Z"
-    },
-    {
-      "userId": 4,
-      "action": "upload_created",
-      "detail": "shariful.cse01@gmail.com uploaded \"A2 German Certificate\" in response to \"A2 German Certificate \" for verification",
-      "createdAt": "2026-04-15T04:40:26.922Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-04-15T04:40:40.220Z"
-    },
-    {
-      "userId": 1,
-      "action": "upload_verified",
-      "detail": "Admin verified upload \"A2 German Certificate\" for shariful.cse01@gmail.com → OB 3.0 credential issued",
-      "createdAt": "2026-04-15T04:41:17.667Z"
-    },
-    {
-      "userId": 4,
-      "action": "login",
-      "detail": "shariful.cse01@gmail.com logged in",
-      "createdAt": "2026-04-15T04:41:33.092Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-04-15T04:42:15.078Z"
-    },
-    {
-      "userId": 3,
-      "action": "login",
-      "detail": "viewer@company.com logged in",
-      "createdAt": "2026-04-15T04:43:33.467Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-04-29T05:58:24.176Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-04-29T05:58:50.646Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-04-29T06:00:15.146Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-04-29T07:33:39.105Z"
-    },
-    {
-      "userId": 1,
-      "action": "upload_verified",
-      "detail": "Admin verified upload \"German Language Certificate B1\" for student@university.edu → OB 3.0 credential issued",
-      "createdAt": "2026-04-29T07:33:52.981Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-04-29T07:33:59.566Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-05-12T10:03:13.341Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-05-12T10:03:27.308Z"
-    },
-    {
-      "action": "access_requested",
-      "detail": "Moodle LMS requested access to student@university.edu's credentials (type: all)",
-      "createdAt": "2026-05-12T10:03:27.395Z"
-    },
-    {
-      "userId": 2,
-      "action": "access_granted",
-      "detail": "Student approved access for Moodle LMS (request: fedd5533-37a6-4835-834b-12c0f3a722cf)",
-      "createdAt": "2026-05-12T10:03:27.625Z"
-    },
-    {
-      "userId": 2,
-      "action": "access_revoked",
-      "detail": "Student revoked access for Moodle LMS (request: fedd5533-37a6-4835-834b-12c0f3a722cf)",
-      "createdAt": "2026-05-12T10:03:27.999Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-05-12T10:04:43.455Z"
-    },
-    {
-      "userId": 1,
-      "action": "login",
-      "detail": "admin@wallet.local logged in",
-      "createdAt": "2026-05-12T10:05:24.969Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-06-24T01:11:19.997Z"
-    },
-    {
-      "userId": 2,
-      "action": "login",
-      "detail": "student@university.edu logged in",
-      "createdAt": "2026-06-24T01:12:41.749Z"
+      "createdAt": "2026-06-24T00:23:12.985Z"
     }
   ],
   "_meta": {
-    "nextUserId": 11
-  },
-  "accessRequests": [
-    {
-      "id": "14935acb-08cb-4206-b3f0-939108d23bb1",
-      "serviceId": "moodle",
-      "serviceName": "Moodle LMS",
-      "studentId": 5,
-      "studentEmail": "sanjida@gmail.com",
-      "credentialType": "German B1 Certificate",
-      "message": "Need you permission to access the credentials",
-      "status": "revoked",
-      "accessToken": null,
-      "tokenExpiresAt": "2026-04-16T05:54:57.855Z",
-      "createdAt": "2026-04-09T05:54:29.244Z",
-      "updatedAt": "2026-04-09T06:08:52.268Z"
-    },
-    {
-      "id": "5edc1b1b-e28b-4e1c-b4d3-eebb63a26c54",
-      "serviceId": "moodle",
-      "serviceName": "Moodle LMS",
-      "studentId": 5,
-      "studentEmail": "sanjida@gmail.com",
-      "credentialType": "German B1 Certificate",
-      "message": "Need you permission to access the credentials",
-      "status": "approved",
-      "accessToken": "394bb14635d00cecbfe1c58487bc4a89419dc8306d65c55fbcc1ce2fb788bc28",
-      "tokenExpiresAt": "2026-04-16T06:09:09.825Z",
-      "createdAt": "2026-04-09T05:55:18.741Z",
-      "updatedAt": "2026-04-09T06:09:09.825Z"
-    },
-    {
-      "id": "6126246e-0367-4428-b90c-6f91f0e08607",
-      "serviceId": "moodle",
-      "serviceName": "Moodle LMS",
-      "studentId": 8,
-      "studentEmail": "shariful@gmail.com",
-      "credentialType": "AWS Cloud Certificate",
-      "message": "Please provide the access for join in the event",
-      "status": "approved",
-      "accessToken": "67792ad931a89d964576885e29fcc7f4c942886aa0e306aba5a877630f9fd976",
-      "tokenExpiresAt": "2026-04-16T06:44:31.722Z",
-      "createdAt": "2026-04-09T06:43:56.498Z",
-      "updatedAt": "2026-04-09T06:44:31.722Z"
-    },
-    {
-      "id": "1c50c11b-bd29-486c-bbae-f55c36398afd",
-      "serviceId": "moodle",
-      "serviceName": "Moodle LMS",
-      "studentId": 9,
-      "studentEmail": "sharif@gmail.com",
-      "credentialType": "German A2",
-      "message": "please provide the access",
-      "status": "approved",
-      "accessToken": "8bb9cc8da7193d9a282002ba5f268c6b7cf89ff3d3090265acd1dfc1f7c3b8d3",
-      "tokenExpiresAt": "2026-04-16T08:16:06.070Z",
-      "createdAt": "2026-04-09T08:15:47.470Z",
-      "updatedAt": "2026-04-09T08:16:06.071Z"
-    },
-    {
-      "id": "15552dcd-df97-4ad3-a985-d372209edcd0",
-      "serviceId": "moodle",
-      "serviceName": "Moodle LMS",
-      "studentId": 9,
-      "studentEmail": "sharif@gmail.com",
-      "credentialType": "German A2",
-      "message": "please provide the access",
-      "status": "pending",
-      "accessToken": null,
-      "tokenExpiresAt": null,
-      "createdAt": "2026-04-09T08:16:15.354Z"
-    },
-    {
-      "id": "67cec691-d85b-4ce5-9d38-a52df2601db9",
-      "serviceId": "moodle",
-      "serviceName": "Moodle LMS",
-      "studentId": 10,
-      "studentEmail": "mahdi@gmail.com",
-      "credentialType": "AWS Cloud Certificate",
-      "message": "please approvde this ",
-      "status": "approved",
-      "accessToken": "39cf28569d57a8b0019fd4d4ce86e2908b29fe19e9c6e04ca9f8de93ccf0acae",
-      "tokenExpiresAt": "2026-04-16T08:33:43.325Z",
-      "createdAt": "2026-04-09T08:33:01.464Z",
-      "updatedAt": "2026-04-09T08:33:43.326Z"
-    },
-    {
-      "id": "c12335e8-0282-4479-a50f-eb384ff7652b",
-      "serviceId": "moodle",
-      "serviceName": "Moodle LMS",
-      "studentId": 4,
-      "studentEmail": "shariful.cse01@gmail.com",
-      "credentialType": "German Language Certificate B1",
-      "message": "Professor from Moodle ",
-      "status": "approved",
-      "accessToken": "214779ba26cf3288689e5fc35aac6e74d51c5056e8fb435b04348c00b81890bc",
-      "tokenExpiresAt": "2026-04-18T06:50:08.541Z",
-      "createdAt": "2026-04-11T06:45:12.356Z",
-      "updatedAt": "2026-04-11T06:50:08.542Z"
-    },
-    {
-      "id": "8e88d73c-af08-4f6e-a2ee-753a3a316b55",
-      "serviceId": "moodle",
-      "serviceName": "Moodle LMS",
-      "studentId": 4,
-      "studentEmail": "shariful.cse01@gmail.com",
-      "credentialType": "German Language Certificate B1",
-      "message": "Professor Admin User from Moodle requests access to your credentials.",
-      "status": "revoked",
-      "accessToken": null,
-      "tokenExpiresAt": "2026-04-22T04:35:34.461Z",
-      "createdAt": "2026-04-15T04:34:58.816Z",
-      "updatedAt": "2026-04-15T04:36:48.952Z"
-    },
-    {
-      "id": "fedd5533-37a6-4835-834b-12c0f3a722cf",
-      "serviceId": "moodle",
-      "serviceName": "Moodle LMS",
-      "studentId": 2,
-      "studentEmail": "student@university.edu",
-      "credentialType": null,
-      "message": "Integration verify",
-      "status": "revoked",
-      "accessToken": null,
-      "tokenExpiresAt": "2026-05-19T10:03:27.623Z",
-      "createdAt": "2026-05-12T10:03:27.394Z",
-      "updatedAt": "2026-05-12T10:03:27.998Z"
+    "nextUserId": 13,
+    "statusIndex": {
+      "list-1": 2
     }
-  ]
+  },
+  "accessRequests": []
 }
