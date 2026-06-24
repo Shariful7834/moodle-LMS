@@ -112,9 +112,64 @@
       "criteria": "Submit your official Goethe/TELC B2 certificate for verification.",
       "expiresAt": "2026-07-24T00:16:18.599Z",
       "createdAt": "2026-06-24T00:16:18.600Z"
+    },
+    {
+      "id": "84dca74a-9988-4185-ae54-e572f4b03912",
+      "source": "moodle",
+      "sourceName": "Conformance Issuer",
+      "achievementName": "Conformance Test 1782269766776",
+      "achievementDescription": "Comprehensive end-to-end conformance test",
+      "achievementType": "Certificate",
+      "courseId": null,
+      "criteria": "Pass all Tier 1 spec checks",
+      "expiresAt": "2026-07-24T02:56:06.778Z",
+      "createdAt": "2026-06-24T02:56:06.778Z"
+    },
+    {
+      "id": "ebe5a7fd-bf2c-4eb5-85a5-6b91a2ef6bac",
+      "source": "moodle",
+      "sourceName": "Salt",
+      "achievementName": "Salt Test 1782269766791",
+      "achievementDescription": "salt uniqueness",
+      "achievementType": "Certificate",
+      "courseId": null,
+      "criteria": "unique",
+      "expiresAt": "2026-07-24T02:56:06.792Z",
+      "createdAt": "2026-06-24T02:56:06.792Z"
     }
   ],
-  "claims": [],
+  "claims": [
+    {
+      "id": "56f2db67-fd0b-4832-a527-c8addeb85326",
+      "announcementId": "84dca74a-9988-4185-ae54-e572f4b03912",
+      "studentId": 2,
+      "studentEmail": "student@university.edu",
+      "studentName": "Max Mustermann",
+      "achievementName": "Conformance Test 1782269766776",
+      "achievementDescription": "Comprehensive end-to-end conformance test",
+      "source": "moodle",
+      "sourceName": "Conformance Issuer",
+      "status": "approved",
+      "createdAt": "2026-06-24T02:56:06.781Z",
+      "updatedAt": "2026-06-24T02:56:06.787Z",
+      "approvedBy": 1
+    },
+    {
+      "id": "0760e678-a260-4edf-893c-efe9ccdd27b4",
+      "announcementId": "ebe5a7fd-bf2c-4eb5-85a5-6b91a2ef6bac",
+      "studentId": 2,
+      "studentEmail": "student@university.edu",
+      "studentName": "Max Mustermann",
+      "achievementName": "Salt Test 1782269766791",
+      "achievementDescription": "salt uniqueness",
+      "source": "moodle",
+      "sourceName": "Salt",
+      "status": "approved",
+      "createdAt": "2026-06-24T02:56:06.795Z",
+      "updatedAt": "2026-06-24T02:56:06.799Z",
+      "approvedBy": 1
+    }
+  ],
   "uploads": [],
   "credentials": [
     {
@@ -310,6 +365,192 @@
       "shareApproved": true,
       "issuedDate": "2026-06-24T00:16:18.605Z",
       "createdAt": "2026-06-24T00:16:18.605Z"
+    },
+    {
+      "id": "00c9867f-678c-4362-99d2-d215ee903fdb",
+      "claimId": "56f2db67-fd0b-4832-a527-c8addeb85326",
+      "source": "claim",
+      "type": "OpenBadgeCredential",
+      "issuerId": "did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer",
+      "issuerName": "Conformance Issuer",
+      "holderId": 2,
+      "achievementName": "Conformance Test 1782269766776",
+      "achievementDescription": "Comprehensive end-to-end conformance test",
+      "vc": {
+        "@context": [
+          "https://www.w3.org/ns/credentials/v2",
+          "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+        ],
+        "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/credentials/00c9867f-678c-4362-99d2-d215ee903fdb",
+        "type": [
+          "VerifiableCredential",
+          "OpenBadgeCredential"
+        ],
+        "name": "Conformance Test 1782269766776",
+        "description": "Comprehensive end-to-end conformance test",
+        "issuer": {
+          "id": "did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer",
+          "type": [
+            "Profile"
+          ],
+          "name": "Conformance Issuer",
+          "description": "Conformance Issuer - OB 3.0 issuer",
+          "url": "https://nine-vessel-intermediate-cameron.trycloudflare.com",
+          "email": "registrar@university.edu"
+        },
+        "validFrom": "2026-06-24T02:56:06.784Z",
+        "validUntil": "2026-07-24T02:56:06.778Z",
+        "credentialSubject": {
+          "id": "mailto:student@university.edu",
+          "type": [
+            "AchievementSubject"
+          ],
+          "achievement": {
+            "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/achievements/84dca74a-9988-4185-ae54-e572f4b03912",
+            "type": [
+              "Achievement"
+            ],
+            "achievementType": "Certificate",
+            "name": "Conformance Test 1782269766776",
+            "description": "Comprehensive end-to-end conformance test",
+            "criteria": {
+              "narrative": "Pass all Tier 1 spec checks"
+            },
+            "image": {
+              "id": "https://university.edu/badges/default-badge.png",
+              "type": "Image",
+              "caption": "Conformance Test 1782269766776"
+            }
+          },
+          "identifier": [
+            {
+              "type": "IdentityObject",
+              "identityType": "emailAddress",
+              "hashed": true,
+              "salt": "eaca76d847f1452a74345e3740de5850",
+              "identityHash": "sha256$6eb013dbb1356d0790b93ae7af558a8ba430904adc652c44aaa46de88a84ca41"
+            }
+          ],
+          "name": "Max Mustermann"
+        },
+        "credentialSchema": [
+          {
+            "id": "https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json",
+            "type": "1EdTechJsonSchemaValidator2019"
+          }
+        ],
+        "credentialStatus": {
+          "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1#2",
+          "type": "BitstringStatusListEntry",
+          "statusPurpose": "revocation",
+          "statusListIndex": "2",
+          "statusListCredential": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1"
+        }
+      },
+      "jwt": "eyJhbGciOiJFUzI1NiIsInR5cCI6InZjK2p3dCIsImtpZCI6ImRpZDp3ZWI6bmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb206YXBpOmJhZGdlczppc3N1ZXIjaXNzdWVyLWtleS0xIiwiY3R5IjoidmMifQ.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvbnMvY3JlZGVudGlhbHMvdjIiLCJodHRwczovL3B1cmwuaW1zZ2xvYmFsLm9yZy9zcGVjL29iL3YzcDAvY29udGV4dC0zLjAuMy5qc29uIl0sImlkIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9hcGkvYmFkZ2VzL2NyZWRlbnRpYWxzLzAwYzk4NjdmLTY3OGMtNDM2Mi05OWQyLWQyMTVlZTkwM2ZkYiIsInR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiLCJPcGVuQmFkZ2VDcmVkZW50aWFsIl0sIm5hbWUiOiJDb25mb3JtYW5jZSBUZXN0IDE3ODIyNjk3NjY3NzYiLCJkZXNjcmlwdGlvbiI6IkNvbXByZWhlbnNpdmUgZW5kLXRvLWVuZCBjb25mb3JtYW5jZSB0ZXN0IiwiaXNzdWVyIjp7ImlkIjoiZGlkOndlYjpuaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbTphcGk6YmFkZ2VzOmlzc3VlciIsInR5cGUiOlsiUHJvZmlsZSJdLCJuYW1lIjoiQ29uZm9ybWFuY2UgSXNzdWVyIiwiZGVzY3JpcHRpb24iOiJDb25mb3JtYW5jZSBJc3N1ZXIgLSBPQiAzLjAgaXNzdWVyIiwidXJsIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbSIsImVtYWlsIjoicmVnaXN0cmFyQHVuaXZlcnNpdHkuZWR1In0sInZhbGlkRnJvbSI6IjIwMjYtMDYtMjRUMDI6NTY6MDYuNzg0WiIsInZhbGlkVW50aWwiOiIyMDI2LTA3LTI0VDAyOjU2OjA2Ljc3OFoiLCJjcmVkZW50aWFsU3ViamVjdCI6eyJpZCI6Im1haWx0bzpzdHVkZW50QHVuaXZlcnNpdHkuZWR1IiwidHlwZSI6WyJBY2hpZXZlbWVudFN1YmplY3QiXSwiYWNoaWV2ZW1lbnQiOnsiaWQiOiJodHRwczovL25pbmUtdmVzc2VsLWludGVybWVkaWF0ZS1jYW1lcm9uLnRyeWNsb3VkZmxhcmUuY29tL2FwaS9iYWRnZXMvYWNoaWV2ZW1lbnRzLzg0ZGNhNzRhLTk5ODgtNDE4NS1hZTU0LWU1NzJmNGIwMzkxMiIsInR5cGUiOlsiQWNoaWV2ZW1lbnQiXSwiYWNoaWV2ZW1lbnRUeXBlIjoiQ2VydGlmaWNhdGUiLCJuYW1lIjoiQ29uZm9ybWFuY2UgVGVzdCAxNzgyMjY5NzY2Nzc2IiwiZGVzY3JpcHRpb24iOiJDb21wcmVoZW5zaXZlIGVuZC10by1lbmQgY29uZm9ybWFuY2UgdGVzdCIsImNyaXRlcmlhIjp7Im5hcnJhdGl2ZSI6IlBhc3MgYWxsIFRpZXIgMSBzcGVjIGNoZWNrcyJ9LCJpbWFnZSI6eyJpZCI6Imh0dHBzOi8vdW5pdmVyc2l0eS5lZHUvYmFkZ2VzL2RlZmF1bHQtYmFkZ2UucG5nIiwidHlwZSI6IkltYWdlIiwiY2FwdGlvbiI6IkNvbmZvcm1hbmNlIFRlc3QgMTc4MjI2OTc2Njc3NiJ9fSwiaWRlbnRpZmllciI6W3sidHlwZSI6IklkZW50aXR5T2JqZWN0IiwiaWRlbnRpdHlUeXBlIjoiZW1haWxBZGRyZXNzIiwiaGFzaGVkIjp0cnVlLCJzYWx0IjoiZWFjYTc2ZDg0N2YxNDUyYTc0MzQ1ZTM3NDBkZTU4NTAiLCJpZGVudGl0eUhhc2giOiJzaGEyNTYkNmViMDEzZGJiMTM1NmQwNzkwYjkzYWU3YWY1NThhOGJhNDMwOTA0YWRjNjUyYzQ0YWFhNDZkZTg4YTg0Y2E0MSJ9XSwibmFtZSI6Ik1heCBNdXN0ZXJtYW5uIn0sImNyZWRlbnRpYWxTY2hlbWEiOlt7ImlkIjoiaHR0cHM6Ly9wdXJsLmltc2dsb2JhbC5vcmcvc3BlYy9vYi92M3AwL3NjaGVtYS9qc29uL29iX3YzcDBfYWNoaWV2ZW1lbnRjcmVkZW50aWFsX3NjaGVtYS5qc29uIiwidHlwZSI6IjFFZFRlY2hKc29uU2NoZW1hVmFsaWRhdG9yMjAxOSJ9XSwiY3JlZGVudGlhbFN0YXR1cyI6eyJpZCI6Imh0dHBzOi8vbmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb20vYXBpL2JhZGdlcy9zdGF0dXMvbGlzdC0xIzIiLCJ0eXBlIjoiQml0c3RyaW5nU3RhdHVzTGlzdEVudHJ5Iiwic3RhdHVzUHVycG9zZSI6InJldm9jYXRpb24iLCJzdGF0dXNMaXN0SW5kZXgiOiIyIiwic3RhdHVzTGlzdENyZWRlbnRpYWwiOiJodHRwczovL25pbmUtdmVzc2VsLWludGVybWVkaWF0ZS1jYW1lcm9uLnRyeWNsb3VkZmxhcmUuY29tL2FwaS9iYWRnZXMvc3RhdHVzL2xpc3QtMSJ9fSwiaXNzIjoiZGlkOndlYjpuaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbTphcGk6YmFkZ2VzOmlzc3VlciIsImlhdCI6MTc4MjI2OTc2NiwibmJmIjoxNzgyMjY5NzY2LCJqdGkiOiJodHRwczovL25pbmUtdmVzc2VsLWludGVybWVkaWF0ZS1jYW1lcm9uLnRyeWNsb3VkZmxhcmUuY29tL2FwaS9iYWRnZXMvY3JlZGVudGlhbHMvMDBjOTg2N2YtNjc4Yy00MzYyLTk5ZDItZDIxNWVlOTAzZmRiIiwic3ViIjoibWFpbHRvOnN0dWRlbnRAdW5pdmVyc2l0eS5lZHUiLCJleHAiOjE3ODQ4NjE3NjZ9.99u_C0cpg90XWwVppy9j4rdhU6--zbekXsd9UHaUMrrVbkmL5WADO1UVQFOAUbmx7LXHpUdZR6qcshZsYL5U7A",
+      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/credentials/00c9867f-678c-4362-99d2-d215ee903fdb\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"Conformance Test 1782269766776\",\"description\":\"Comprehensive end-to-end conformance test\",\"issuer\":{\"id\":\"did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer\",\"type\":[\"Profile\"],\"name\":\"Conformance Issuer\",\"description\":\"Conformance Issuer - OB 3.0 issuer\",\"url\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-06-24T02:56:06.784Z\",\"validUntil\":\"2026-07-24T02:56:06.778Z\",\"credentialSubject\":{\"id\":\"mailto:student@university.edu\",\"type\":[\"AchievementSubject\"],\"achievement\":{\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/achievements/84dca74a-9988-4185-ae54-e572f4b03912\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"Conformance Test 1782269766776\",\"description\":\"Comprehensive end-to-end conformance test\",\"criteria\":{\"narrative\":\"Pass all Tier 1 spec checks\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"Conformance Test 1782269766776\"}},\"identifier\":[{\"type\":\"IdentityObject\",\"identityType\":\"emailAddress\",\"hashed\":true,\"salt\":\"eaca76d847f1452a74345e3740de5850\",\"identityHash\":\"sha256$6eb013dbb1356d0790b93ae7af558a8ba430904adc652c44aaa46de88a84ca41\"}],\"name\":\"Max Mustermann\"},\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}],\"credentialStatus\":{\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1#2\",\"type\":\"BitstringStatusListEntry\",\"statusPurpose\":\"revocation\",\"statusListIndex\":\"2\",\"statusListCredential\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1\"}}",
+      "statusListId": "list-1",
+      "statusListIndex": 2,
+      "identitySalt": "eaca76d847f1452a74345e3740de5850",
+      "status": "issued",
+      "shareApproved": true,
+      "issuedDate": "2026-06-24T02:56:06.784Z",
+      "createdAt": "2026-06-24T02:56:06.788Z",
+      "revokedAt": null,
+      "revokedBy": null,
+      "revokeReason": null,
+      "updatedAt": "2026-06-24T02:56:06.886Z"
+    },
+    {
+      "id": "aa1f6efb-fa38-4195-a7e8-7eca54c8ca6d",
+      "claimId": "0760e678-a260-4edf-893c-efe9ccdd27b4",
+      "source": "claim",
+      "type": "OpenBadgeCredential",
+      "issuerId": "did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer",
+      "issuerName": "Salt",
+      "holderId": 2,
+      "achievementName": "Salt Test 1782269766791",
+      "achievementDescription": "salt uniqueness",
+      "vc": {
+        "@context": [
+          "https://www.w3.org/ns/credentials/v2",
+          "https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json"
+        ],
+        "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/credentials/aa1f6efb-fa38-4195-a7e8-7eca54c8ca6d",
+        "type": [
+          "VerifiableCredential",
+          "OpenBadgeCredential"
+        ],
+        "name": "Salt Test 1782269766791",
+        "description": "salt uniqueness",
+        "issuer": {
+          "id": "did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer",
+          "type": [
+            "Profile"
+          ],
+          "name": "Salt",
+          "description": "Salt - OB 3.0 issuer",
+          "url": "https://nine-vessel-intermediate-cameron.trycloudflare.com",
+          "email": "registrar@university.edu"
+        },
+        "validFrom": "2026-06-24T02:56:06.798Z",
+        "validUntil": "2026-07-24T02:56:06.792Z",
+        "credentialSubject": {
+          "id": "mailto:student@university.edu",
+          "type": [
+            "AchievementSubject"
+          ],
+          "achievement": {
+            "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/achievements/ebe5a7fd-bf2c-4eb5-85a5-6b91a2ef6bac",
+            "type": [
+              "Achievement"
+            ],
+            "achievementType": "Certificate",
+            "name": "Salt Test 1782269766791",
+            "description": "salt uniqueness",
+            "criteria": {
+              "narrative": "unique"
+            },
+            "image": {
+              "id": "https://university.edu/badges/default-badge.png",
+              "type": "Image",
+              "caption": "Salt Test 1782269766791"
+            }
+          },
+          "identifier": [
+            {
+              "type": "IdentityObject",
+              "identityType": "emailAddress",
+              "hashed": true,
+              "salt": "133b5bf9c7f8d8ee4cfda93d5d8c1cf3",
+              "identityHash": "sha256$c027a8d48c989191a0b23f12b87501a10301b69c43fd013532083fd252468519"
+            }
+          ],
+          "name": "Max Mustermann"
+        },
+        "credentialSchema": [
+          {
+            "id": "https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json",
+            "type": "1EdTechJsonSchemaValidator2019"
+          }
+        ],
+        "credentialStatus": {
+          "id": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1#3",
+          "type": "BitstringStatusListEntry",
+          "statusPurpose": "revocation",
+          "statusListIndex": "3",
+          "statusListCredential": "https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1"
+        }
+      },
+      "jwt": "eyJhbGciOiJFUzI1NiIsInR5cCI6InZjK2p3dCIsImtpZCI6ImRpZDp3ZWI6bmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb206YXBpOmJhZGdlczppc3N1ZXIjaXNzdWVyLWtleS0xIiwiY3R5IjoidmMifQ.eyJ2YyI6eyJAY29udGV4dCI6WyJodHRwczovL3d3dy53My5vcmcvbnMvY3JlZGVudGlhbHMvdjIiLCJodHRwczovL3B1cmwuaW1zZ2xvYmFsLm9yZy9zcGVjL29iL3YzcDAvY29udGV4dC0zLjAuMy5qc29uIl0sImlkIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9hcGkvYmFkZ2VzL2NyZWRlbnRpYWxzL2FhMWY2ZWZiLWZhMzgtNDE5NS1hN2U4LTdlY2E1NGM4Y2E2ZCIsInR5cGUiOlsiVmVyaWZpYWJsZUNyZWRlbnRpYWwiLCJPcGVuQmFkZ2VDcmVkZW50aWFsIl0sIm5hbWUiOiJTYWx0IFRlc3QgMTc4MjI2OTc2Njc5MSIsImRlc2NyaXB0aW9uIjoic2FsdCB1bmlxdWVuZXNzIiwiaXNzdWVyIjp7ImlkIjoiZGlkOndlYjpuaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbTphcGk6YmFkZ2VzOmlzc3VlciIsInR5cGUiOlsiUHJvZmlsZSJdLCJuYW1lIjoiU2FsdCIsImRlc2NyaXB0aW9uIjoiU2FsdCAtIE9CIDMuMCBpc3N1ZXIiLCJ1cmwiOiJodHRwczovL25pbmUtdmVzc2VsLWludGVybWVkaWF0ZS1jYW1lcm9uLnRyeWNsb3VkZmxhcmUuY29tIiwiZW1haWwiOiJyZWdpc3RyYXJAdW5pdmVyc2l0eS5lZHUifSwidmFsaWRGcm9tIjoiMjAyNi0wNi0yNFQwMjo1NjowNi43OThaIiwidmFsaWRVbnRpbCI6IjIwMjYtMDctMjRUMDI6NTY6MDYuNzkyWiIsImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImlkIjoibWFpbHRvOnN0dWRlbnRAdW5pdmVyc2l0eS5lZHUiLCJ0eXBlIjpbIkFjaGlldmVtZW50U3ViamVjdCJdLCJhY2hpZXZlbWVudCI6eyJpZCI6Imh0dHBzOi8vbmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb20vYXBpL2JhZGdlcy9hY2hpZXZlbWVudHMvZWJlNWE3ZmQtYmYyYy00ZWI1LTg1YTUtNmI5MWEyZWY2YmFjIiwidHlwZSI6WyJBY2hpZXZlbWVudCJdLCJhY2hpZXZlbWVudFR5cGUiOiJDZXJ0aWZpY2F0ZSIsIm5hbWUiOiJTYWx0IFRlc3QgMTc4MjI2OTc2Njc5MSIsImRlc2NyaXB0aW9uIjoic2FsdCB1bmlxdWVuZXNzIiwiY3JpdGVyaWEiOnsibmFycmF0aXZlIjoidW5pcXVlIn0sImltYWdlIjp7ImlkIjoiaHR0cHM6Ly91bml2ZXJzaXR5LmVkdS9iYWRnZXMvZGVmYXVsdC1iYWRnZS5wbmciLCJ0eXBlIjoiSW1hZ2UiLCJjYXB0aW9uIjoiU2FsdCBUZXN0IDE3ODIyNjk3NjY3OTEifX0sImlkZW50aWZpZXIiOlt7InR5cGUiOiJJZGVudGl0eU9iamVjdCIsImlkZW50aXR5VHlwZSI6ImVtYWlsQWRkcmVzcyIsImhhc2hlZCI6dHJ1ZSwic2FsdCI6IjEzM2I1YmY5YzdmOGQ4ZWU0Y2ZkYTkzZDVkOGMxY2YzIiwiaWRlbnRpdHlIYXNoIjoic2hhMjU2JGMwMjdhOGQ0OGM5ODkxOTFhMGIyM2YxMmI4NzUwMWExMDMwMWI2OWM0M2ZkMDEzNTMyMDgzZmQyNTI0Njg1MTkifV0sIm5hbWUiOiJNYXggTXVzdGVybWFubiJ9LCJjcmVkZW50aWFsU2NoZW1hIjpbeyJpZCI6Imh0dHBzOi8vcHVybC5pbXNnbG9iYWwub3JnL3NwZWMvb2IvdjNwMC9zY2hlbWEvanNvbi9vYl92M3AwX2FjaGlldmVtZW50Y3JlZGVudGlhbF9zY2hlbWEuanNvbiIsInR5cGUiOiIxRWRUZWNoSnNvblNjaGVtYVZhbGlkYXRvcjIwMTkifV0sImNyZWRlbnRpYWxTdGF0dXMiOnsiaWQiOiJodHRwczovL25pbmUtdmVzc2VsLWludGVybWVkaWF0ZS1jYW1lcm9uLnRyeWNsb3VkZmxhcmUuY29tL2FwaS9iYWRnZXMvc3RhdHVzL2xpc3QtMSMzIiwidHlwZSI6IkJpdHN0cmluZ1N0YXR1c0xpc3RFbnRyeSIsInN0YXR1c1B1cnBvc2UiOiJyZXZvY2F0aW9uIiwic3RhdHVzTGlzdEluZGV4IjoiMyIsInN0YXR1c0xpc3RDcmVkZW50aWFsIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9hcGkvYmFkZ2VzL3N0YXR1cy9saXN0LTEifX0sImlzcyI6ImRpZDp3ZWI6bmluZS12ZXNzZWwtaW50ZXJtZWRpYXRlLWNhbWVyb24udHJ5Y2xvdWRmbGFyZS5jb206YXBpOmJhZGdlczppc3N1ZXIiLCJpYXQiOjE3ODIyNjk3NjYsIm5iZiI6MTc4MjI2OTc2NiwianRpIjoiaHR0cHM6Ly9uaW5lLXZlc3NlbC1pbnRlcm1lZGlhdGUtY2FtZXJvbi50cnljbG91ZGZsYXJlLmNvbS9hcGkvYmFkZ2VzL2NyZWRlbnRpYWxzL2FhMWY2ZWZiLWZhMzgtNDE5NS1hN2U4LTdlY2E1NGM4Y2E2ZCIsInN1YiI6Im1haWx0bzpzdHVkZW50QHVuaXZlcnNpdHkuZWR1IiwiZXhwIjoxNzg0ODYxNzY2fQ.fMKNtzcVY4jGkok8nP6iyX277J_ziUaDVty8DwkOpp3QzdOdnklK5bOsI1Ub049XWYf2iR8UVUbW9gI5c1Tezw",
+      "ob3Json": "{\"@context\":[\"https://www.w3.org/ns/credentials/v2\",\"https://purl.imsglobal.org/spec/ob/v3p0/context-3.0.3.json\"],\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/credentials/aa1f6efb-fa38-4195-a7e8-7eca54c8ca6d\",\"type\":[\"VerifiableCredential\",\"OpenBadgeCredential\"],\"name\":\"Salt Test 1782269766791\",\"description\":\"salt uniqueness\",\"issuer\":{\"id\":\"did:web:nine-vessel-intermediate-cameron.trycloudflare.com:api:badges:issuer\",\"type\":[\"Profile\"],\"name\":\"Salt\",\"description\":\"Salt - OB 3.0 issuer\",\"url\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com\",\"email\":\"registrar@university.edu\"},\"validFrom\":\"2026-06-24T02:56:06.798Z\",\"validUntil\":\"2026-07-24T02:56:06.792Z\",\"credentialSubject\":{\"id\":\"mailto:student@university.edu\",\"type\":[\"AchievementSubject\"],\"achievement\":{\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/achievements/ebe5a7fd-bf2c-4eb5-85a5-6b91a2ef6bac\",\"type\":[\"Achievement\"],\"achievementType\":\"Certificate\",\"name\":\"Salt Test 1782269766791\",\"description\":\"salt uniqueness\",\"criteria\":{\"narrative\":\"unique\"},\"image\":{\"id\":\"https://university.edu/badges/default-badge.png\",\"type\":\"Image\",\"caption\":\"Salt Test 1782269766791\"}},\"identifier\":[{\"type\":\"IdentityObject\",\"identityType\":\"emailAddress\",\"hashed\":true,\"salt\":\"133b5bf9c7f8d8ee4cfda93d5d8c1cf3\",\"identityHash\":\"sha256$c027a8d48c989191a0b23f12b87501a10301b69c43fd013532083fd252468519\"}],\"name\":\"Max Mustermann\"},\"credentialSchema\":[{\"id\":\"https://purl.imsglobal.org/spec/ob/v3p0/schema/json/ob_v3p0_achievementcredential_schema.json\",\"type\":\"1EdTechJsonSchemaValidator2019\"}],\"credentialStatus\":{\"id\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1#3\",\"type\":\"BitstringStatusListEntry\",\"statusPurpose\":\"revocation\",\"statusListIndex\":\"3\",\"statusListCredential\":\"https://nine-vessel-intermediate-cameron.trycloudflare.com/api/badges/status/list-1\"}}",
+      "statusListId": "list-1",
+      "statusListIndex": 3,
+      "identitySalt": "133b5bf9c7f8d8ee4cfda93d5d8c1cf3",
+      "status": "issued",
+      "shareApproved": true,
+      "issuedDate": "2026-06-24T02:56:06.798Z",
+      "createdAt": "2026-06-24T02:56:06.800Z"
     }
   ],
   "shares": [],
@@ -361,12 +602,70 @@
       "action": "login",
       "detail": "admin@wallet.local logged in",
       "createdAt": "2026-06-24T02:33:25.888Z"
+    },
+    {
+      "userId": 1,
+      "action": "login",
+      "detail": "admin@wallet.local logged in",
+      "createdAt": "2026-06-24T02:56:06.718Z"
+    },
+    {
+      "userId": 2,
+      "action": "login",
+      "detail": "student@university.edu logged in",
+      "createdAt": "2026-06-24T02:56:06.774Z"
+    },
+    {
+      "action": "announcement_created",
+      "detail": "moodle announced \"Conformance Test 1782269766776\" – all students notified",
+      "createdAt": "2026-06-24T02:56:06.778Z"
+    },
+    {
+      "userId": 2,
+      "action": "claim_created",
+      "detail": "student@university.edu claimed \"Conformance Test 1782269766776\"",
+      "createdAt": "2026-06-24T02:56:06.781Z"
+    },
+    {
+      "userId": 1,
+      "action": "claim_approved",
+      "detail": "Admin approved claim \"Conformance Test 1782269766776\" for student@university.edu → JWT-VC issued (00c9867f-678c-4362-99d2-d215ee903fdb)",
+      "createdAt": "2026-06-24T02:56:06.789Z"
+    },
+    {
+      "action": "announcement_created",
+      "detail": "moodle announced \"Salt Test 1782269766791\" – all students notified",
+      "createdAt": "2026-06-24T02:56:06.793Z"
+    },
+    {
+      "userId": 2,
+      "action": "claim_created",
+      "detail": "student@university.edu claimed \"Salt Test 1782269766791\"",
+      "createdAt": "2026-06-24T02:56:06.796Z"
+    },
+    {
+      "userId": 1,
+      "action": "claim_approved",
+      "detail": "Admin approved claim \"Salt Test 1782269766791\" for student@university.edu → JWT-VC issued (aa1f6efb-fa38-4195-a7e8-7eca54c8ca6d)",
+      "createdAt": "2026-06-24T02:56:06.800Z"
+    },
+    {
+      "userId": 1,
+      "action": "credential_revoked",
+      "detail": "Revoked credential 00c9867f-678c-4362-99d2-d215ee903fdb (Conformance Test 1782269766776)",
+      "createdAt": "2026-06-24T02:56:06.875Z"
+    },
+    {
+      "userId": 1,
+      "action": "credential_unrevoked",
+      "detail": "Restored credential 00c9867f-678c-4362-99d2-d215ee903fdb",
+      "createdAt": "2026-06-24T02:56:06.886Z"
     }
   ],
   "_meta": {
     "nextUserId": 13,
     "statusIndex": {
-      "list-1": 2
+      "list-1": 4
     }
   },
   "accessRequests": []
