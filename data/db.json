@@ -997,6 +997,18 @@
       "action": "login",
       "detail": "admin@wallet.local logged in",
       "createdAt": "2026-05-12T10:05:24.969Z"
+    },
+    {
+      "userId": 2,
+      "action": "login",
+      "detail": "student@university.edu logged in",
+      "createdAt": "2026-06-24T01:11:19.997Z"
+    },
+    {
+      "userId": 2,
+      "action": "login",
+      "detail": "student@university.edu logged in",
+      "createdAt": "2026-06-24T01:12:41.749Z"
     }
   ],
   "_meta": {

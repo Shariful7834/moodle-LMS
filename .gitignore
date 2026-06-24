@@ -32,3 +32,9 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Signing keys + runtime data (never commit)
+server/data/keys/
+data/keys/
+cloudflared.exe
+*.exe
